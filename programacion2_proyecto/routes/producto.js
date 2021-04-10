@@ -3,7 +3,9 @@ let router = express.Router();
 let controller = require('../controllers/productoControllers')
 /* GET users listing. */
 router.get('/', controller.index);
-// router.get();
-
-// router.get();
+router.get('/creaTuCuenta', controller.register);
+router.get('/ingresa', controller.login);
+//router.get()
+//router.get()
+//router.get()
 module.exports = router;
