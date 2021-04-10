@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let controller = require('../controllers/productoController')
+let controller = require('../controllers/productoControllers')
 /* GET users listing. */
-router.get();
-router.get();
+router.get('/', controller.index);
+// router.get();
 
-router.get();
+// router.get();
 module.exports = router;
