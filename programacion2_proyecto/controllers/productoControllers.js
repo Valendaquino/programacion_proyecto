@@ -10,5 +10,8 @@ let controller = {
      login: function(req,res){
         res.render('login')
     },
+    perfil: function(req,res){
+        res.render('profile')
+    }
 }
 module.exports = controller

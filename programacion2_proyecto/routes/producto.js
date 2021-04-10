@@ -5,7 +5,7 @@ let controller = require('../controllers/productoControllers')
 router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
 router.get('/ingresa', controller.login);
-//router.get()
+router.get('/miPerfil', controller.perfil)
 //router.get()
 //router.get()
 module.exports = router;
