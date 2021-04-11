@@ -12,6 +12,12 @@ let controller = {
     },
     perfil: function(req,res){
         res.render('profile')
+    },
+    editarperfil: function(req,res){
+        res.render('profile-edit')
+    },
+    agregarproducto: function(req,res){
+        res.render('product-add')
     }
 }
 module.exports = controller
