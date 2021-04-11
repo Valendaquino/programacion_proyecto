@@ -170,9 +170,11 @@ hr {
 
 .products-title {
   font-size: 2.4em;
+  font-family:"Georgia", "Palatino", serif;
   font-weight: 400;
-  color: var(--gray);
+  color: black
 }
+
 
 .product-box {
   background-color: #fff0f5;
@@ -199,9 +201,10 @@ hr {
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
+  
   font-weight: 300;
   margin: 0;
+  font-family:'Times New Roman', Times, serif
 }
 
 .product-box_data span {
