@@ -4,9 +4,9 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
+  --yellow:   #FFE4E1 ;
+  --dark-blue:#FFB6C1;
+  --light-blue:#FFB6C1;
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
@@ -175,7 +175,7 @@ hr {
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: #fff0f5;
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
