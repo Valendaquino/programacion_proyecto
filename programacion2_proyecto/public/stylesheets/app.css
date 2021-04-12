@@ -441,21 +441,40 @@ hr {
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
-  font-size: 1.6em;
+  font-size: 1.8em;
   margin: 10px 0;
+  background: rosybrown;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .form-input {
   display: block;
-  width: 100%;
+  width: 200%;
   height: 45px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.5em;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  border: solid 1px var(--gray);
+  border: solid 2px black;
   padding: 0 15px;
+  font-family: 'Times New Roman', Times, serif;
+ }
+
+.boton {
+  color: black;
+  background: rosybrown;
+  border-radius: 8px;
+  border:2px solid pink;
+  width: 50%;
+  height: 15%;
+  font-family: 'Times New Roman', Times, serif;
+  
 }
+
+
+
+  
+
 
 .error{
   color: rgb(209, 0, 0);
@@ -466,6 +485,7 @@ textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;
+  
 }
 
 /*====== Profile ======*/
