@@ -5,8 +5,8 @@
 /*====== Variables ======*/
 :root {
   --yellow:   #FFE4E1 ;
-  --dark-blue:#FFB6C1;
-  --light-blue:#FFB6C1;
+  --dark-blue:#ea899a;
+  --light-blue:#ea899a;
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
@@ -109,6 +109,9 @@ hr {
   cursor: pointer;
 }
 
+.search-form_button .fa-search:hover{
+  color:#ea899a;
+}
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
@@ -140,7 +143,7 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  color:#ea899a;
 }
 
 .left-navbar a,
@@ -154,11 +157,19 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+ /* background-image: url(/images/products/makeupbanner2.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100px;
+  height: 100px; 
+  background-color:  #FFE4E1 ;
+ 
+}
+.banner img{
+  height: 100%;
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 
 
@@ -190,6 +201,7 @@ hr {
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
+  
 }
 
 .product-box_data {
@@ -247,7 +259,7 @@ hr {
 }
 
 .product-box:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px #ea899a;
 }
 
 .product-box:hover p {
@@ -473,12 +485,14 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color:  #ea899a ;
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
 }
-
+.btn:hover{
+  background-color: #DB7093 ; 
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
@@ -489,6 +503,9 @@ textarea.form-input {
 
   .banner {
     height: 320px;
+  }
+  .banner img{
+    height: 100%;
   }
 
   .btn-toggle-navbar {
