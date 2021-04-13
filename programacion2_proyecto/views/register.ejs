@@ -11,26 +11,27 @@
 
 			</h2>
 		<div class="formulario">
+			<form action="./miPerfil" method="GET">
+				<label class="form-label" for="">Nombre:</label>
+				<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
 
-			<label class="form-label" for="">Nombre:</label>
-			<input class="form-input" name="nombre" value="" method="GET" type="text" placeholder="Pepito...">
+				<label class="form-label" for="">Apellido:</label>
+				<input class="form-input" name="apellido" value=""  type="text" placeholder="Gomez...">
 
-			<label class="form-label" for="">Apellido:</label>
-			<input class="form-input" name="apellido" value="" method="GET" type="text" placeholder="Gomez...">
+				<label class="form-label" for="">E-mail:</label>
+				<input class="form-input" name="email" value=""  type="email" placeholder="pepito_gomez@gmail.com">
 
-			<label class="form-label" for="">E-mail:</label>
-			<input class="form-input" name="email" value="" method="GET" type="email" placeholder="pepito_gomez@gmail.com">
+				<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
+				<input class="form-input" name="usuario" value=""  type="text" placeholder="pepito123">
 
-			<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-			<input class="form-input" name="usuario" value="" method="GET" type="text" placeholder="pepito123">
+				<label class="form-label" for="">Contraseña:</label>
+				<input class="form-input" name="contrasena" value=""  type="text" placeholder="*******">
 
-			<label class="form-label" for="">Contraseña:</label>
-			<input class="form-input" name="contrasena" value="" method="GET" type="text" placeholder="*******">
+				<label class="form-label" for="">Confirmar contraseña:</label>
+				<input class="form-input"  name="con_contra" value="" type="text" placeholder="*******">
 
-			<label class="form-label" for="">Confirmar contraseña:</label>
-			<input class="form-input" method="GET" name="con_contra" value="" type="text" placeholder="*******">
-
-			<button class="boton"> <a href="/miperfil">Iniciar sesion</a></button>
+				<button type="submit" class="boton"> Iniciar sesion</button>
+			</form>
 		</div>
 
 	<%- include('./partials/footer') %> 	
