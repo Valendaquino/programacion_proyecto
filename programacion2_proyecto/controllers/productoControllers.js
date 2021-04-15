@@ -18,6 +18,21 @@ let controller = {
     },
     agregarproducto: function(req,res){
         res.render('product-add')
+    },
+    producto: function(req,res){
+       
+       
+        let ids = req.params.id
+        
+        let resultado = {}
+        for(let i=0;i<producto.length; i++){
+            if(producto[i].id==ids){
+               resultado=producto[i];
+               console.log(resultado);
+            }
+        }
+        console.log(resultado);
+        res.render('product', {producto:resultado})
     }
 }
 module.exports = controller
