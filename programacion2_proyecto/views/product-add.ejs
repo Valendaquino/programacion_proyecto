@@ -9,9 +9,31 @@
 			<!-- Show the "ultimos" products -->
 			<div class="form">
 				<form action="" method="GET">
-					<label for=""></label>
-					<input type="text" class="form-input" placeholder="" name="">
+					<label for="" class="form-label">Selecciona el tipo de producto: </label>
+					<p class="tipoDeProducto">
+						<select name="tipos de productos"  class="form-input">
+						  <option>Bases</option>
+						  <option>Delineadores</option>
+						  <option>Labiales</option>
+						  <option>Paletas y sombras</option>
+						  <option>polvos y rubores</option>
+						</select>
+					 </p>
+
+					<label for="" class="form-label">Nombre del producto</label>
+					<input type="text" class="form-input" placeholder="Insertar nombre" name="Nombre del producto">
+
+					<label for="" class="form-label">Especifica la marca del producto</label>
+					<input type="text" class="form-input" placeholder="Marca del Producto" name="Marca del Producto">
+
+					<label for="" class="form-label">Inserta iamgen de tu producto</label>
+					<input type="file" class="form-input" name="Imagen">
+					
+					<label for="" class="form-label">Agrega tu descripcion del producto</label>
+					<p><textarea name="comentario"  class="form-input" rows="5" cols="50">Escribe aquí tu comentario: </textarea></p>
 				</form>
+				
+				<input type="button" value="Publicar producto" name="boton1" >
 			</div>
 
 
