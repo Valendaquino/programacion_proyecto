@@ -37,78 +37,78 @@ module.exports = [
     },
     {
         id: 6,
-        nombre: 'BENE TINT',
-        descripcion: 'Tinta de bronceado natural, tiene un efecto “rellenador”, también hace que luzca más suave y mejor la textura en general de la piel.',
-        imagen: '/images/products/benetint.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 7,
-        nombre: 'RUBOR SUNSHINE MAC',
-        descripcion: 'Polvo leve iluminador con tonalidad rosasea, ideal para lucir un aspecto bronceado diariamente',
-        imagen: '/images/products/macpolvobrillo.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 8,
-        nombre: 'BRONCER BRUSH',
-        descripcion: 'Herramienta ideal para polvos compactos o rubores, la mejor calidad de cerdas seleccionadas eco-friendly y cruelty-free',
-        imagen: '/images/products/brush.jpeg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 9,
-        nombre: 'ESTEE LAUDER RUN ',
-        descripcion: 'Base compacta de excelente covertura para utilizar en cualquier lugar y en cualquier moemento.',
-        imagen: '/images/products/baseCompacta.jpeg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 10,
-        nombre: 'WAVES, YVES SAINT LAURENT',
-        descripcion: 'Delineador de alta duracion a prueba de agua, para lucir una mirada mas profunda y desafiante',
-        imagen: '/images/products/eyeliner.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 11,
-        nombre: 'MAC LIPGLOSS',
-        descripcion: 'Labial rosado con terminacion total GLOSS. Disponible en mas de 4 colores.',
-        imagen: '/images/products/lipgloss.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 12,
-        nombre: 'NAKED CHERRY',
-        descripcion: 'Paleta de 12 tonalidades, una buena eleccion si bsucas una mezcla de colores para el uso diario, sin dejar de lado algunos tonos mas jugados e intensos.',
-        imagen: '/images/products/paletaCherry.jpeg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 13,
-        nombre: 'ALL NIGHT',
-        descripcion: 'Mascara de pestañas a prueba de agua, con duracion de mas de 12 horas. Una opcion ideal para aquellos que desean que su maquillaje les dure toda la noche',
-        imagen: '/images/products/pestañas.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 14,
-        nombre: 'CHOCOLATE',
-        descripcion: 'Paleta con tonos seleccionados para crear increibles makeups tanto diarios como de noche. Su incrible pigmentcion es la magia de Bobi brown.',
-        imagen: '/images/products/sombrasojos.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     },
     {
         id: 15,
-        nombre: 'SET CELESTIAL',
-        descripcion: 'Pack de 5 lapiz labiales con distintas tonalidadades de nudes, por Estee Lauder. Sin duda una increible opcion para ampliar tus opciones y jugar con los distintos tonos. ',
-        imagen: '/images/products/lipstickestelauderpeg.jpeg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
     },
     {
         id: 16,
-        nombre: 'ROSÉ BLUSH',
-        descripcion: 'Un icono Dior, el rubor "Rosé" es un clasico para lucir una piel bronceada con el perfecto tono de rosado neceario para convertir cualquier makeup en uno mas natural y profesional. ',
-        imagen: '/images/products/diorskinrubor.jpg'
+        nombre: '',
+        descripcion: '',
+        imagen: ''
 
     }
 ]
