@@ -2,36 +2,39 @@
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
-		<div class="row">
+		<div class="">
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12">
+		<div class="contenedor">
+		
+			<div class="formulario">
+				<form action="./miPerfil" method="GET">
+					<label class="form-label" for="">Nombre:</label>
+					<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
 
-			</h2>
-		<div class="formulario">
-			<form action="./miPerfil" method="GET">
-				<label class="form-label" for="">Nombre:</label>
-				<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
+					<label class="form-label" for="">Apellido:</label>
+					<input class="form-input" name="apellido" value=""  type="text" placeholder="Gomez...">
 
-				<label class="form-label" for="">Apellido:</label>
-				<input class="form-input" name="apellido" value=""  type="text" placeholder="Gomez...">
+					<label class="form-label" for="">E-mail:</label>
+					<input class="form-input" name="email" value=""  type="email" placeholder="pepito_gomez@gmail.com">
 
-				<label class="form-label" for="">E-mail:</label>
-				<input class="form-input" name="email" value=""  type="email" placeholder="pepito_gomez@gmail.com">
+					<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
+					<input class="form-input" name="usuario" value=""  type="text" placeholder="pepito123">
 
-				<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-				<input class="form-input" name="usuario" value=""  type="text" placeholder="pepito123">
+					<label class="form-label" for="">Contraseña:</label>
+					<input class="form-input" name="contrasena" value=""  type="text" placeholder="*******">
 
-				<label class="form-label" for="">Contraseña:</label>
-				<input class="form-input" name="contrasena" value=""  type="text" placeholder="*******">
+					<label class="form-label" for="">Confirmar contraseña:</label>
+					<input class="form-input"  name="con_contra" value="" type="text" placeholder="*******">
 
-				<label class="form-label" for="">Confirmar contraseña:</label>
-				<input class="form-input"  name="con_contra" value="" type="text" placeholder="*******">
-
-				<button type="submit" class="boton"> Iniciar sesion</button>
-			</form>
+					<button type="submit" class="boton"> Iniciar sesion</button>
+				</form>
+			</div>
+			<div>
+				<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/MNolM0COeDjQQ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/make-up-MNolM0COeDjQQ"></a></p>
+			</div>
 		</div>
 		
 	<%- include('./partials/footer') %> 	

@@ -453,8 +453,9 @@ hr {
 }
 
 .form-input {
-  display: block;
-  width: 200%;
+  display: flex;
+  width: 90%;
+
   height: 45px;
   margin-bottom: 10px;
   font-size: 1.5em;
@@ -470,13 +471,19 @@ hr {
   background: rosybrown;
   border-radius: 8px;
   border:2px solid pink;
-  width: 50%;
-  height: 15%;
+  width: fit-content;
+  height: 20%;
   font-family: 'Times New Roman', Times, serif;
+  
   
 }
 
-
+.contenedor{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
 
   
 
