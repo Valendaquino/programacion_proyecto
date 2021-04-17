@@ -35,7 +35,7 @@ let controller = {
         res.render('product', {producto:resultado})
     },
     search: function(req,res){
-        res.render('search-results')
+        res.render('search-results', {producto:producto})
     }
 }
 module.exports = controller
