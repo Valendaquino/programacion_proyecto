@@ -526,7 +526,10 @@ textarea.form-input {
 .btn:hover{
   background-color: #DB7093 ; 
 }
-
+.carousel{
+  transition: 1s;
+  
+}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
@@ -581,7 +584,10 @@ textarea.form-input {
     margin: auto;
   }
 
+   
+
    }
+
 
 
 
