@@ -11,7 +11,7 @@ let controller = {
         res.render('login')
     },
     perfil: function(req,res){
-        res.render('profile')
+        res.render('profile', {producto:producto})
     },
     editarperfil: function(req,res){
         res.render('profile-edit')

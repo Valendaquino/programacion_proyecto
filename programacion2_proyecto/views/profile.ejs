@@ -34,121 +34,27 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="/images/products/pestañas.jpg" alt="mascara de pestañas">
-						</figure>
-						<article class="product-box_data">
-							<h2>MAC IN EXTREME DIMENSION WATERPROOF LASH</h2>
-							<p>Las pestañas adquieren un magnífico tamaño, estructura y movimiento con In Extreme Dimension Waterproof, la ligera mascara cremosa de MAC que satura de la raíz a la punta, ahora en una fórmula a prueba de agua.</p>
-							<p>Comentarios: 12</p>
-						</article>  
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/diorpolvo.jpg" alt="polvo dior">
-						</figure>
-						<article class="product-box_data">
-							<h2>DIORSKIN MINERAL NUDE LUMINIZER
-								</h2>
-							<p>El polvo Diorskin Nude Luminizer ilumina instantáneamente la tez con un brillo iridiscente y le da a la cara un brillo multidimensional. </p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/lipgloss.jpg" alt="lipgloss">
-						</figure>
-						<article class="product-box_data">
-							<h2>MAC LIPGLASS LIP GLOSS</h2>
-							<p>Un gloss único disponible en variedad de colores capaces de crear un acabado de alto brillo tipo vidrio o un toque lustroso sutil.</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/macpolvobrillo.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2> MAC MINERALIZE SKINFINISH</h2>
-							<p>Un lujoso polvo facial, suavemente refinado, aterciopelado, con acabado radiante. Difumina de manera estratégica para resaltar los puntos altos del rostro o aplica en todo el rostro para lograr una luminosidad natural en la piel. Incluye nuestro 77-Mineral Complex y vitamina E.</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/lipstickestelauderpeg.jpeg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>MiNY ENVY LIPSTICK NUDES SET ESTEE LAUDER</h2>
-							<p>Un color que tiene el poder de transformar tus labios, tu look, tu actitud. </p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/eyeliner.jpg" alt="Eyeliner">
-						</figure>
-						<article class="product-box_data">
-							<h2>YVES SAINT LAURENT COUTURE LIQUID EYELINER</h2>
-							<p>Couture Eye Liner es un delineador líquido premium de Yves Saint Laurent que te permite lograr un delineado perfecto y preciso.</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/sombrasojos.jpg" alt="sombra">
-						</figure>
-						<article class="product-box_data">
-							<h2>BOBBY BROWN MODERN SYMPHONY EYE SHADOW PALETTE</h2>
-							<p>Una paleta lista para la juerga de ocho sombras de ojos ultra-mezclables. </p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="product.html">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="images/products/diorskinrubor.jpg" alt="rubor">
-						</figure>
-						<article class="product-box_data">
-							<h2>DIORSKIN ROUGE BLUSH</h2>
-							<p>Rouge Blush es el único colorete de la Maison Dior que aporta a las mejillas un color intenso y ultrapigmentado, garantizando una larga duración.</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
+			<% for(let i = 0 ; i<8; i++) {  %> 
+
+				<!-- Show the "ultimos" products -->
+				
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/producto/<%=producto[i].id %> ">
+							<figure class="product-box_image">
+								<img class= "img-producto" src="<%=producto[i].imagen %> " alt="<%=producto[i].nombre%>">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=producto[i].nombre%></h2>
+								<p><%=producto[i].descripcion%></p>
+								<p>Comentarios: 12</p>
+							</article>
+						</a>
+					</section>
+				</div>
+				   <%  } %> 
 		</div>
-	</div>
+		</div>
 	<!-- /Mis productos -->
 
 
