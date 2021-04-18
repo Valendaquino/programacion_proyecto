@@ -91,6 +91,9 @@ hr {
   position: relative;
   display: flex;
   align-items: center;
+
+  
+  
 }
 
 .search-form_input {
@@ -101,6 +104,8 @@ hr {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  
+  
 }
 
 .search-form_button {
@@ -485,8 +490,16 @@ hr {
   justify-content: center;
 }
 
+  /*separadores*/
+.separadores{
+  display:flex;
+    color: white;
+    font-family:Copperplate ;
+    justify-content: center;
+    font-size: 30px;
+    background-color:black;
   
-
+}
 
 .error{
   color: rgb(209, 0, 0);
@@ -530,6 +543,13 @@ textarea.form-input {
   transition: 1s;
   
 }
+
+
+.gift{
+  width: 60%;
+}
+
+
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
