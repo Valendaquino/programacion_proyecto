@@ -28,10 +28,10 @@ let controller = {
         for(let i=0;i<producto.length; i++){
             if(producto[i].id==ids){
                resultado=producto[i];
-               console.log(resultado);
+               
             }
         }
-        console.log(resultado);
+        
         res.render('product', {producto:resultado})
     },
     search: function(req,res){
