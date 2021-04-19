@@ -22,6 +22,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -29,7 +43,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -37,13 +51,14 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
                 texto: 'Increible el color que te deja. Más que recomendado!'
 
             }
+            
         ]
 
     },
@@ -70,6 +85,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -77,7 +106,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -85,7 +114,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -120,6 +149,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -127,7 +170,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -135,7 +178,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -169,6 +212,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -176,7 +233,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -184,7 +241,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -218,13 +275,27 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
                 texto: 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.'
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -232,7 +303,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -266,6 +337,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -273,7 +358,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -281,7 +366,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -295,7 +380,7 @@ module.exports = [
     {
         id: 7,
         nombre: 'RUBOR SUNSHINE MAC',
-        descripcion: 'Polvo leve iluminador con tonalidad rosasea, ideal para lucir un aspecto bronceado diariamente',
+        descripcion: 'Polvo leve iluminador con tonalidad rosada, ideal para lucir un aspecto bronceado diariamente',
         imagen: '/images/products/macpolvobrillo.jpg',
         comentarios:[
             {
@@ -315,13 +400,27 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
                 texto: 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.'
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -329,7 +428,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -363,6 +462,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -370,7 +483,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -378,7 +491,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -412,6 +525,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -419,7 +546,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -427,7 +554,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -461,6 +588,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -468,7 +609,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -476,7 +617,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -510,6 +651,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -517,7 +672,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -525,7 +680,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -559,6 +714,20 @@ module.exports = [
             },
             {
                 id:3,
+                nombre: 'rocifag',
+                foto_perfil: '/images/users/rocifag.jpeg',
+                fecha_creacion: '4/8/2020',
+                texto: 'Nunca tuve una peor experiencia!'
+
+            },
+            {   id:4,
+                nombre: 'josesito_makeup',
+                foto_perfil: '/images/users/josesito.png',
+                fecha_creacion: '22/7/2020',
+                texto: '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.'
+            },
+            {
+                id:5,
                 nombre: 'valegonzales__',
                 foto_perfil: '/images/users/user3.jpg',
                 fecha_creacion: '14/5/2020',
@@ -566,7 +735,7 @@ module.exports = [
 
             },
             {
-                id:4,
+                id:6,
                 nombre: 'sofa_rimolo',
                 foto_perfil: '/images/users/user4.jpg',
                 fecha_creacion: '11/7/2020',
@@ -574,7 +743,7 @@ module.exports = [
 
             },
             {
-                id:5,
+                id:7,
                 nombre: 'tot.salado',
                 foto_perfil: '/images/users/user5.jpg',
                 fecha_creacion: '3/8/2020',
@@ -584,8 +753,8 @@ module.exports = [
         ]
 
 
-    },
-    {
+    }
+    /* {
         id: 13,
         nombre: 'ALL NIGHT',
         descripcion: 'Mascara de pestañas a prueba de agua, con duracion de mas de 12 horas. Una opcion ideal para aquellos que desean que su maquillaje les dure toda la noche',
@@ -774,10 +943,10 @@ module.exports = [
                 fecha_creacion: '3/8/2020',
                 texto: 'Increible el color que te deja. Más que recomendado!'
 
-            }
+            } 
         ]
+    }*/
 
 
-    }
 ]
 
