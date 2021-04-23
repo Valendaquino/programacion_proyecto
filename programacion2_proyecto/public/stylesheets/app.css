@@ -197,7 +197,9 @@ hr {
   font-size: 2.5em;
   font-family:"verdana", "Palatino", serif;
   font-weight: 400;
-  color: black
+  color: white;
+  background-color: black;
+  
 }
 
 
