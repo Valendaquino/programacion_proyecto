@@ -76,7 +76,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: black;
 }
 
 .main-header_home-link,
@@ -141,6 +141,7 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  color: white;
 }
 
 .left-navbar,
@@ -296,13 +297,14 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color:black;
   padding: 20px 0;
   margin-top: 80px;
 }
 
 .footer-data {
   text-align: center;
+  
 }
 
 .footer-data i {
@@ -311,14 +313,14 @@ hr {
 }
 
 .footer-data h2 {
-  color: var(--gray);
-  font-size: 2.4em;
+  color: white;
+  font-size: 2em;
   font-weight: 400;
  
 }
 
 .footer-data p {
-  color: var(--gray);
+  color: white;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -466,7 +468,6 @@ hr {
   display: inline-block;
   font-size: 1.8em;
   margin: 10px 0;
-  background: rosybrown;
   font-family: 'ginebra', Times, serif;
 }
 
@@ -488,10 +489,11 @@ hr {
   color: black;
   background: rosybrown;
   border-radius: 8px;
-  border:2px solid pink;
-  width: fit-content;
-  height: 20%;
+  border: 6px solid rosybrown;
+  width: 30%;
+  height: 50%;
   font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5em;;
   
   
 }
