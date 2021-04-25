@@ -3,6 +3,7 @@ module.exports = [
         id: 1,
         nombre: 'MIlk LIP + CHEEK',
         descripcion: 'Una barra de color hidratante multiusos para labios y mejillas. ',
+        fecha_creacion:'2021/02/12',
         imagen: '/images/products/milkBlush.jpg',
         comentarios:[
             {
@@ -66,6 +67,7 @@ module.exports = [
         id: 2,
         nombre: 'LANCOME GRANDIOSE',
         descripcion: 'Lancôme desvela con la máscara de pestañas Grandiôse una nueva técnica de aplicación para crear, sin esfuerzo, una mirada con unas pestañas perfectamente desplegadas, voluminosas y homogéneas.',
+        fecha_creacion:'2021/01/02',
         imagen: '/images/products/lancomeMascara.png',
         comentarios:[
             {
@@ -130,6 +132,7 @@ module.exports = [
         id: 3,
         nombre: 'NAKED RELOADED',
         descripcion: 'De Urban Decay. Estos 12 tonos novedosos son de todo menos corrientes y no tienen nada de básico... Esta paleta abarca desde mates sedosos y suaves satinados hasta tonos con más brillo y purpurinas de colores. ',
+        fecha_creacion:  '2020/09/08',
         imagen: '/images/products/nakedReloaded.jpg',
         comentarios:[
             {
@@ -193,6 +196,7 @@ module.exports = [
         id: 4,
         nombre: 'GLOSS BOMB UNIVERSAL LIP',
         descripcion: 'De Fenty Beauty. El iluminador de labios Gloss Bomb Universal Lip Luminizer ofrece un brillo explosivo.Los labios lucen instantáneamente más turgentes y suaves, con una formula no pegajosa.',
+        fecha_creacion: '2020/12/21',
         imagen: '/images/products/glosBomb.jpg',
         comentarios:[
             {
@@ -256,6 +260,7 @@ module.exports = [
         id: 5,
         nombre: 'BEAUTY BLENDER',
         descripcion: 'Una herramienta de maquillaje reutilizable que permite la aplicación uniforme y sin desperdiciar productos de belleza. BeautyBlender tiene una estructura que permite absorber pequeñas cantidades de agua cuando está mojado.',
+        fecha_creacion: '2021/10/05',
         imagen: '/images/products/beautyBlender.jpg',
         comentarios:[
             {
@@ -318,6 +323,7 @@ module.exports = [
         id: 6,
         nombre: 'BENE TINT',
         descripcion: 'Tinta de bronceado natural, tiene un efecto “rellenador”, también hace que luzca más suave y mejor la textura en general de la piel.',
+        fecha_creacion: '2020/04/05',
         imagen: '/images/products/benetint.jpg',
         comentarios:[
             {
@@ -381,6 +387,7 @@ module.exports = [
         id: 7,
         nombre: 'RUBOR SUNSHINE MAC',
         descripcion: 'Polvo leve iluminador con tonalidad rosada, ideal para lucir un aspecto bronceado diariamente',
+        fecha_creacion: '2021/11/09',
         imagen: '/images/products/macpolvobrillo.jpg',
         comentarios:[
             {
@@ -443,6 +450,7 @@ module.exports = [
         id: 8,
         nombre: 'BRONCER BRUSH',
         descripcion: 'Herramienta ideal para polvos compactos o rubores, la mejor calidad de cerdas seleccionadas eco-friendly y cruelty-free',
+        fecha_creacion:'2020/03/04',
         imagen: '/images/products/brush.jpeg',
         comentarios:[
             {
@@ -506,6 +514,7 @@ module.exports = [
         id: 9,
         nombre: 'ESTEE LAUDER RUN ',
         descripcion: 'Base compacta de excelente covertura para utilizar en cualquier lugar y en cualquier moemento.',
+        fecha_creacion: '2020/06/08',
         imagen: '/images/products/baseCompacta.jpeg',
         comentarios:[
             {
@@ -569,6 +578,7 @@ module.exports = [
         id: 10,
         nombre: 'WAVES, YVES SAINT LAURENT',
         descripcion: 'Delineador de alta duracion a prueba de agua, para lucir una mirada mas profunda y desafiante',
+        fecha_creacion:'2020/03/09',
         imagen: '/images/products/eyeliner.jpg',
         comentarios:[
             {
@@ -632,6 +642,7 @@ module.exports = [
         id: 11,
         nombre: 'MAC LIPGLOSS',
         descripcion: 'Labial rosado con terminacion total GLOSS. Disponible en mas de 4 colores.',
+        fecha_creacion: '2020/02/05',
         imagen: '/images/products/lipgloss.jpg',
         comentarios:[
             {
@@ -695,6 +706,7 @@ module.exports = [
         id: 12,
         nombre: 'NAKED CHERRY',
         descripcion: 'Paleta de 12 tonalidades, una buena eleccion si bsucas una mezcla de colores para el uso diario, sin dejar de lado algunos tonos mas jugados e intensos.',
+        fecha_creacion: '2021/05/05',
         imagen: '/images/products/paletaCherry.jpeg',
         comentarios:[
             {

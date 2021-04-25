@@ -82,9 +82,7 @@ hr {
   justify-content: space-between;
   padding-top: 25px;
 }
-.main-header .row img{
-  width: 120%;
-}
+
 
 .main-header_home-link,
 .main-header_credit-link {
@@ -375,6 +373,10 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+
+}
+.product-detail .product-detail-description{
+  padding-top: 70px;
 }
 
 .product-detail-price {
@@ -495,7 +497,7 @@ hr {
   font-family: 'Times New Roman', Times, serif;
  }
 
-.boton {
+.boton{
   color: black;
   background: rosybrown;
   border-radius: 8px;
@@ -507,7 +509,11 @@ hr {
   
   
 }
-
+.button{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
 .contenedor{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -585,7 +591,9 @@ textarea.form-input {
     margin-top: 0;
     text-align: right;
   }
-
+  .main-header .row img{
+    width: 120%;
+  }
   .banner {
     height: 320px;
   }
