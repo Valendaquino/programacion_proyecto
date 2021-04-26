@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 
 
-var productoRouter = require('./routes/producto');
+var productoRouter = require('./routes/index');
 
 var app = express();
 
