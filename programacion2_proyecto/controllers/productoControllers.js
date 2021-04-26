@@ -1,7 +1,7 @@
 let producto = require('../data/productoshome');
 let controller = {
    index: function(req,res) {
-      res.render('index', {producto:producto})
+      res.render('index', {'producto':producto})
 
      },
      register: function(req,res){
@@ -11,7 +11,7 @@ let controller = {
         res.render('login')
     },
     perfil: function(req,res){
-        res.render('profile', {producto:producto})
+        res.render('profile', {'producto':producto})
     },
     editarperfil: function(req,res){
         res.render('profile-edit')
@@ -32,10 +32,10 @@ let controller = {
             }
         }
         
-        res.render('product', {producto:resultado})
+        res.render('product', {'producto':resultado})
     },
     search: function(req,res){
-        res.render('search-results', {producto:producto})
+        res.render('search-results', {'producto':producto})
     }
 }
 module.exports = controller
