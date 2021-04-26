@@ -10,6 +10,9 @@ var indexRouter = require('./routes/index');
 var productoRouter = require('./routes/producto');
 var usersRouter = require('./routes/users');
 
+
+
+
 var app = express();
 
 // view engine setup
@@ -23,12 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/producto', productoRouter);
-app.use('/users', usersRouter);
-
-
-
-
+app.use('/',productoRouter);
+app.use('/', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
