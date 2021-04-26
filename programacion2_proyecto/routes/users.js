@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let controller = require('../controllers/productoControllers')
+let controller = require('../controllers/usersControllers')
 /* GET users listing. */
 router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
