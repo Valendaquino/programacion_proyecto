@@ -1,9 +1,9 @@
 let producto = require('../data/productoshome');
 let controller = {
-   index: function(req,res) {
-      res.render('index', {'producto':producto})
-
-     },
+    index: function(req,res) {
+        res.render('index', {'producto':producto})
+  
+       },
      register: function(req,res){
          res.render('register')
      },
