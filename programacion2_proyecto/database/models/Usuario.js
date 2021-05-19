@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: true
         },
         email: {
-            type: dataTypes.STRINNG,
+            type: dataTypes.STRING,
             allowNull: true
         },
         pasword:{
