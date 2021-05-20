@@ -1,24 +1,18 @@
 module.exports = (sequelize, dataTypes)=>{
 
-    let alias = 'Producto';
+    let alias = 'Product';
     let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-       nombre: {
+       name: {
             type: dataTypes.STRING,
             allowNull: false
 
         },
-        
-        user_id: {
-            type: dataTypes.INTEGER,
-            //foreing key 
-            allowNull: false
-        },
-        create_date: {
+        publish_date: {
             type: dataTypes.DATE,
             allowNull: false
         },
@@ -30,19 +24,25 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING,
             allowNull: false
         },
-        product_type:{
+        user_id: {
             type: dataTypes.INTEGER,
+            //foreing key 
             allowNull: false
-            //foreing key
+        },
+
+    //    product_type:{
+    //       type: dataTypes.INTEGER,
+    //     allowNull: false
+    //     //foreing key
         }
 
     };
     let config = {
-        table: "Producto",
+        table: "Products",
         timestamps: false,
         underscored: true
     }
 
-    const Producto = sequelize.define(alias, cols, config)
-    return Producto;
+    const Product = sequelize.define(alias, cols, config)
+    return Product;
 }
