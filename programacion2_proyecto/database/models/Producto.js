@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-       name: {
+       nombre: {
             type: dataTypes.STRING,
             allowNull: false
 
@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING,
             allowNull: false
         },
-        Product_type:{
+        product_type:{
             type: dataTypes.INTEGER,
             allowNull: false
             //foreing key
