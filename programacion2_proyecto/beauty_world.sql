@@ -1,6 +1,6 @@
 CREATE DATABASE beauty_world2 CHARACTER SET utf8mb4;
 
-USE beauty_world;
+USE beauty_world2;
 
 CREATE TABLE users(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
