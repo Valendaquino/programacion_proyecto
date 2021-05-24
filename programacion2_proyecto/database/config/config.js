@@ -3,7 +3,7 @@ module.exports=
   "development": {
     "username": "root",
     "password": "root",
-    "database": "beauty_world",
+    "database": "beauty_world2",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
