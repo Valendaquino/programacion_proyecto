@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes)=>{
     //       type: dataTypes.INTEGER,
     //     allowNull: false
     //     //foreing key
-        }
+      //}
 
     };
     let config = {
