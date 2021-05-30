@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-       tipo_producto: {
+       type_product: {
             type: dataTypes.STRING,
             allowNull: false
 

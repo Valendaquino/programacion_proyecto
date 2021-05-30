@@ -13,7 +13,27 @@ let controller = {
        },
     
     agregarproducto: function(req,res){
-        res.render('product-add')
+        return res.render('product-add')
+    },
+    almacenar: function(req,res){
+        type.findAll()
+        .then(function (type_product){
+            return res.render('product-add', {type_product})
+        })
+        .catch(err => console.log(err))
+        let product = {
+            name_: req.body.name,
+            publish_date: req.body.date,
+            description: req.body.description,
+            url_image: req.body.length.img,
+            //user_id:req.body.user
+            type_id: req.body.type_id
+            }
+
+        db.Product.create(product)
+    
+            .then(() => res.redirect('/')) //la ruta esta bien?
+            .catch(err => console.log(err))  
     },
     //borramos un this.producto(no sabiamos xa que servia)
     producto: function(req,res){
