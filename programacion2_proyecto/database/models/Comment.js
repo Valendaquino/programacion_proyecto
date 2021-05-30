@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes)=>{
         underscored: true
     }
 
-    const Comments = sequelize.define(alias, cols, config)
-    return Comments;
+    const Comment = sequelize.define(alias, cols, config)
+    return Comment;
 
 }
