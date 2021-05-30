@@ -22,13 +22,13 @@
 			<div class="col-12">
 				<div class="separadores"><h2 class="product-tittle">Novedades</h2></div>
 			</div>
-			<% for(let i = 0 ; i<8; i++) {  %> 
+			<% for(let i = 0 ; i<resultados.lenght; i++) {  %> 
 
 			<!-- Show the "ultimos" products -->
 			
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/producto/<%=producto[i].id %> ">
+					<a href="/producto/<%=resultados[i].id %> ">
 						<figure class="product-box_image">
 							<img class= "img-producto" src="<%=producto[i].imagen %> " alt="<%=producto[i].nombre%>">
 						</figure>

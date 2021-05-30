@@ -1,15 +1,20 @@
 const db = require('../database/models');
-const product = db.Producto;
-const user= db.Usuario;
-const comment = db.Comentario;
-const type = db.Tipo_producto;
+const product = db.Product;
+const user= db.User;
+const comment = db.comment;
+const type = db.type_product;
 
 const op = db.Sequelize.Op;
 
-let producto = require('../data/productoshome');
 let controller = {
    index: function(req,res) {
-      res.render('index', {'producto':producto})
+       product.findAll({
+       where:[`date`],
+       order:[[`date`,`DESC`],],
+       limit:8,
+      })
+      .then((resultados)=> res.render(`index`,{resultados}))
+     .catch((err)=>`Error:${err}`)
 
      }
 }
