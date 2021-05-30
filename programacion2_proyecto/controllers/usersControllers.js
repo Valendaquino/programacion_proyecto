@@ -1,7 +1,7 @@
 const db = require('../database/models');
-const product = db.product;
-const user= db.user;
-const comment = db.comment;
+const product = db.Product;
+const user= db.User;
+const comment = db.Comment;
 const type = db.Type_product;
 
 const op = db.Sequelize.Op;
