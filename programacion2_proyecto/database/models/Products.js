@@ -30,11 +30,11 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
 
-    //    product_type:{
-    //       type: dataTypes.INTEGER,
-    //     allowNull: false
-    //     //foreing key
-      //}
+        product_type:{
+        type: dataTypes.INTEGER,
+         allowNull: false
+        //foreing key
+ }
 
     };
     let config = {
