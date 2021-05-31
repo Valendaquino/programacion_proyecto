@@ -15,6 +15,30 @@ let controller = {
     agregarproducto: function(req,res){
         res.render('product-add')
     },
+    add:function(req,res){
+        type.findAll()
+        .then (function(type_product){
+            return res.render('product-add', {type_product})
+        })
+        .catch(err => console.log(err))
+        
+    },
+    almacenar:function(req,res){
+        let product = {
+            name_: req.body.name,
+            publish_date: req.body.publish_date,
+            description: req.body.description,
+            url_image: req.body.img,
+            type_id:req.body.type_id
+            //hay q poner el update y user id?
+        } 
+
+        db.Product.create(product)
+        
+            .then(() => res.redirect('/product'))
+            .catch(err => console.log(err))
+    },
+
     //borramos un this.producto(no sabiamos xa que servia)
     producto: function(req,res){
        
@@ -41,8 +65,25 @@ let controller = {
                 id: primaryKey
             }
         })
-        .then(()=> res.redirect('/'))
+        .then(()=> res.redirect('/product'))
         .catch(err=> console.log(err))
+    },
+    edit: function(req,res){
+        let primaryKey=req.params.id
+        product.findByPk(primaryKey)
+        .then(resultados => res.render('product-edit', { resultados }))
+        .catch(err => console.log(err))
+    },
+    update: function(req,res){
+        let primaryKey=req.params.id
+        let productUpdate=req.body
+            product.update(
+                productUpdate,
+                {where:{
+                    id: primaryKey
+                } } )
+            .then(()=> res.redirect('/product'))
+            .catch(err => console.log(err))
     }
 }
 module.exports = controller

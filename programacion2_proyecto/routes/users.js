@@ -6,6 +6,6 @@ router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
 router.get('/ingresa', controller.login);
 router.get('/miPerfil', controller.perfil);
-router.get('/editarPerfil', controller.editarperfil);
-
+router.get('/editarPerfil/:id', controller.edit);
+router.get('/editarPerfil/:id', controller.update);
 module.exports = router;

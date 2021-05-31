@@ -20,9 +20,23 @@ let controller = {
    perfil: function(req,res){
        res.render('profile', {'producto':producto})
    },
-   editarperfil: function(req,res){
-       res.render('profile-edit')
-   }
+   edit: function(req,res){
+        let primaryKey=req.params.id
+        product.findByPk(primaryKey)
+        .then(resultados => res.render('profile-edit', { resultados }))
+        .catch(err => console.log(err))
+   },
+   update:function(req,res){
+        let primaryKey=req.params.id
+            let userUpdate=req.body
+                user.update(
+                    userUpdate,
+                    {where:{
+                        id: primaryKey
+                    } } )
+                .then(()=> res.redirect('/users'))
+                .catch(err => console.log(err))
+    }
 
 }
 

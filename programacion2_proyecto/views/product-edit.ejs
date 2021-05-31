@@ -5,7 +5,7 @@
 	<div class="container products-wrapper">
 		<div class="">
 			<div class="col-12">
-				<h2 class="products-title">Editar mi perfil</h2>
+				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="contenedor">
@@ -13,30 +13,35 @@
 				<div style="width:100%;height:0;padding-bottom:138%;position:relative;"><iframe src="https://giphy.com/embed/3mJZaMnMZpVbNT3CkZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/stickers/maybelline-3mJZaMnMZpVbNT3CkZ"></a></p>
 			</div>
 			<div class="formulario">
-				<form action="./miPerfil" method="GET">
+				<form action="/producto/edit/" method="POST">
 					<label class="form-label" for="">Nombre:</label>
-					<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
+					<!-- porqué no toma el _? -->
+					<input class="form-input" name="nombre" value="<%=resultados.name_%>"  type="text" placeholder="Pepito...">
 	
 					<label class="form-label" for="">Descripcion:</label>
-					<input class="form-input" name="usuario" value=""  type="text" placeholder="Gomez...">
+					<input class="form-input" name="usuario" value="<%=resultados.description%>"  type="text" placeholder="Gomez...">
 	
-					<label class="form-label" for="">tipo de producto:</label>
-					<input class="form-input" name="web" value=""  type="text" placeholder="sitio web">
+					<label class="form-label" class="form-label" for="">Imagen:</label>
+					<input class="form-input" name="email" value="<%=resultados.image%>"  type="email" placeholder="email">
+
+					<!-- como hacemos esto? -->
+					<label class="form-label" for="">Tipo de producto:</label> 
+					<input class="form-input" name="web" value="<%=resultados.type_id%>"  type="text" placeholder="sitio web">
 	
-					<label class="form-label" class="form-label" for="">Email:</label>
-					<input class="form-input" name="email" value=""  type="email" placeholder="email">
-	
-					<label class="form-label" for="">Numero de telefono:</label>
-					<input class="form-input" name="telefono" value=""  type="number" placeholder="+54">
 					
+					<label class="form-label" for="">Día de publicación:</label>
+					<input class="form-input" name="telefono" value="<%=resultados.publish_date%>"  type="number" placeholder="+54">
+					
+					<label class="form-label" for="">Día de actualización:</label>
+					<input class="form-input" name="telefono" value="<%=resultados.updated_at%>"  type="number" placeholder="+54">
+					
+
 					<div class="button">
 					<button type="submit" class="boton"> Guardar cambios</button> 
                      
 					</div>
 				</form>
-                <form style="display: inline;" action="/movies/detalle/<%=resultados.id %>" method="POST">
-                    <button class="btn btn-danger" type="submit">Borrar</button>
-                </form>
+            
 				<form style="display: inline;" action="/producto/<%=resultados.id %>" method="POST">
 					<button class="btn btn-danger" type="submit">Borrar</button>
 				</form>

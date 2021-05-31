@@ -13,21 +13,22 @@
 				<div style="width:100%;height:0;padding-bottom:138%;position:relative;"><iframe src="https://giphy.com/embed/3mJZaMnMZpVbNT3CkZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/stickers/maybelline-3mJZaMnMZpVbNT3CkZ"></a></p>
 			</div>
 			<div class="formulario">
-				<form action="./miPerfil" method="GET">
+				<form action="/editarPerfil/" method="POST">
 					<label class="form-label" for="">Nombre:</label>
-					<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
+					<input class="form-input" name="nombre" value="<%= resultados.name_users  %> "  type="text" placeholder="Pepito...">
+	
+					<label class="form-label" for="">Apellido:</label>
+					<input class="form-input" name="usuario" value="<%= resultados.surname  %>"  type="text" placeholder="Gomez...">
 	
 					<label class="form-label" for="">Nombre de usuario:</label>
-					<input class="form-input" name="usuario" value=""  type="text" placeholder="Gomez...">
+					<input class="form-input" name="usuario" value="<%= resultados.username  %>"  type="text" placeholder="Gomez...">
 	
-					<label class="form-label" for="">Sitio web:</label>
-					<input class="form-input" name="web" value=""  type="text" placeholder="sitio web">
-	
+
 					<label class="form-label" class="form-label" for="">Email:</label>
-					<input class="form-input" name="email" value=""  type="email" placeholder="email">
+					<input class="form-input" name="email" value="<%= resultados.email  %>"  type="email" placeholder="email">
 	
-					<label class="form-label" for="">Numero de telefono:</label>
-					<input class="form-input" name="telefono" value=""  type="number" placeholder="+54">
+					<label class="form-label" for="">Fecha de nacimiento:</label>
+					<input class="form-input" name="telefono" value="<%= resultados.birth_date  %>"  type="number" placeholder="+54">
 					
 					<div class="button">
 					<button type="submit" class="boton"> Guardar cambios</button>
