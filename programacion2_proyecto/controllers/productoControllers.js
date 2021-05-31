@@ -33,6 +33,16 @@ let controller = {
         })
         .then((resultados)=> res.render(`search-results`,{resultados}))
         .catch((err)=>`Error:${err}`)
+    },
+    borrar: (req, res)=>{
+        let primaryKey = req.params.id;
+        product.destroy({
+            where: {
+                id: primaryKey
+            }
+        })
+        .then(()=> res.redirect('/'))
+        .catch(err=> console.log(err))
     }
 }
 module.exports = controller
