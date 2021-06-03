@@ -24,9 +24,7 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.DATE,
             
         }
-      
-        //foreign key user_id
-        //product_id
+        
 
     };
     let config = {
@@ -36,6 +34,19 @@ module.exports = (sequelize, dataTypes)=>{
     }
 
     const Comment = sequelize.define(alias, cols, config)
+
+    Comment.associate = (models)=>{
+        Comment.belongsTo(models.User,{
+            as:'user',
+            foreingKey:'user_id'
+        });
+        Comment.belongsTo(models.Product,{
+            as:'product',
+            foreingKey:'product_id'
+
+        })
+    }
+
     return Comment;
 
 }
