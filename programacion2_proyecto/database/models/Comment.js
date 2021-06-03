@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-       text: {
+       text_: {
             type: dataTypes.STRING,
            
 
@@ -24,9 +24,9 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.DATE,
             
         }
-       //foreing key (user_id)
-       //foreing key (product_id)
-        
+      
+        //foreign key user_id
+        //product_id
 
     };
     let config = {

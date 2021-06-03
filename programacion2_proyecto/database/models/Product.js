@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-       name_: {
+        name_: {
             type: dataTypes.STRING,
             allowNull: false
 
@@ -16,11 +16,11 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.DATE,
             allowNull: false
         },
-        description: {
+        description_: {
             type: dataTypes.STRING,
             allowNull: false
         },
-        img_url:{
+        url_image:{
             type: dataTypes.STRING,
             allowNull: false
         },
@@ -29,16 +29,18 @@ module.exports = (sequelize, dataTypes)=>{
             //foreing key 
             allowNull: false
         },
-
-        product_type:{
+        type_id:{
         type: dataTypes.INTEGER,
          allowNull: false
         //foreing key
- }
+        },
+        updated_at:{
+            type: dataTypes.DATE
+        }
 
     };
     let config = {
-        table: "Products",
+        table: "products",
         timestamps: false,
         underscored: true
     }
