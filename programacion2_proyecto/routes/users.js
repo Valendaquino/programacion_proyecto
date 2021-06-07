@@ -3,6 +3,16 @@ let router = express.Router();
 let controller = require('../controllers/usersControllers')
 let multer = require("multer")
 let path = require("path")
+
+var storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+    		cb(null, 'public/img/users');
+	},
+	filename: (req, file, cb) => {
+    		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+	}
+});
+var upload = multer({ storage: storage });
 /* GET users listing. */
 router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
