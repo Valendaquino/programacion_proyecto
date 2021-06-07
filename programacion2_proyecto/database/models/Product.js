@@ -55,9 +55,10 @@ module.exports = (sequelize, dataTypes)=>{
             foreingKey:'type_id'
 
         });
+        // acá falta el belong to de comments?
         Product.hasMany(models.Comment, {
-            as:'comment',
-            foreingKey: '_id'
+            as:'comments',
+            foreingKey: 'produc_id'
         })
     }
 

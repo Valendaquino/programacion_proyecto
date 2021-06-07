@@ -9,7 +9,7 @@ const op = db.Sequelize.Op;
 let controller = {
     index: function(req,res) {
         res.render('index', {'producto':producto})
-  
+  // donde hacemos lo de hacer click en home y q me devuelva ese prod?
        },
     
     agregarproducto: function(req,res){
@@ -31,6 +31,7 @@ let controller = {
             url_image: req.body.img,
             type_id:req.body.type_id
             //hay q poner el update y user id?
+            //como incluyo acá la association
         } 
 
         db.Product.create(product)
@@ -39,11 +40,14 @@ let controller = {
             .catch(err => console.log(err))
     },
 
-    //borramos un this.producto(no sabiamos xa que servia)
+   
     producto: function(req,res){
        
     let primaryKey= req.params.id
-        product.findByPk(primaryKey)
+        product.findByPk(primaryKey, {
+            include: [{association:'type_product'}, {association:'user'}, {association:'comments'}]//está bien comments?
+            
+        })
         .then((resultados)=> res.render(`product`,{resultados}))
         .catch((err)=>`Error:${err}`)
         
@@ -70,7 +74,9 @@ let controller = {
     },
     edit: function(req,res){
         let primaryKey=req.params.id
-        product.findByPk(primaryKey)
+        product.findByPk(primaryKey, {
+            include: [{association:'type_product'}, {association:'user'}]
+        })
         .then(resultados => res.render('product-edit', { resultados }))
         .catch(err => console.log(err))
     },

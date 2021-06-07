@@ -55,10 +55,14 @@ module.exports = (sequelize, dataTypes)=>{
     const User = sequelize.define(alias, cols, config)
 
    User.associate = (models)=>{
-    User.belongsTo(models.Product,{
-        as:'product',
-        foreingKey:'user_id'
-    });
+        User.belongsTo(models.Product,{
+            as:'product',
+            foreingKey:'user_id'
+        });
+        User.hasMany(models.Comment,{
+            as:'comments',
+            foreingKey:'user_id'
+        });
 }
 
     return User;
