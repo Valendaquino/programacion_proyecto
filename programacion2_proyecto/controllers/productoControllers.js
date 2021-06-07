@@ -9,7 +9,6 @@ const op = db.Sequelize.Op;
 let controller = {
     index: function(req,res) {
         res.render('index', {'producto':producto})
-  // donde hacemos lo de hacer click en home y q me devuelva ese prod?
        },
     
     agregarproducto: function(req,res){
@@ -30,8 +29,9 @@ let controller = {
             description: req.body.description,
             url_image: req.body.img,
             type_id:req.body.type_id
-            //hay q poner el update y user id?
+            //hay q poner el update ?
             //como incluyo acá la association
+            //como hacer q el publish y updated at se gcarguen solos
         } 
 
         db.Product.create(product)

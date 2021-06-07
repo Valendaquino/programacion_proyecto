@@ -63,7 +63,7 @@ module.exports = (sequelize, dataTypes)=>{
             as:'comments',
             foreingKey:'user_id'
         });
-}
+}// preguntar esto
 
     return User;
 }
