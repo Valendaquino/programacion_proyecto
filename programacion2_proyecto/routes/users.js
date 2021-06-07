@@ -16,7 +16,7 @@ var upload = multer({ storage: storage });
 /* GET users listing. */
 router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
-router.post('/creaTuCuenta', upload.single('users'), controller.store)
+//router.post('/creaTuCuenta', upload.single('users'), controller.store)
 router.get('/ingresa', controller.login);
 router.get('/miPerfil', controller.perfil);
 router.get('/editarPerfil/:id', controller.edit);
