@@ -18,6 +18,7 @@ router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
 //router.post('/creaTuCuenta', upload.single('users'), controller.store)
 router.get('/ingresa', controller.login);
+router.post('/ingresa', controller.processLogin);
 router.get('/miPerfil', controller.perfil);
 router.get('/editarPerfil/:id', controller.edit);
 router.get('/editarPerfil/:id', controller.update);

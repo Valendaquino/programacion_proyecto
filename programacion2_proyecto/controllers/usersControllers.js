@@ -16,7 +16,13 @@ let controller = {
     },
     login: function(req,res){
        res.render('login')
-   },
+    },
+    processLogin: function(req,res){
+    res.send('hola')
+ 
+    },
+
+
    perfil: function(req,res){
        res.render('profile', {'producto':producto})
    },

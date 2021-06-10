@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+let db = require('./database/models');
 
 
 
@@ -24,6 +26,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session( { secret: "Secretito", 
+                  resave: false, 
+                 saveUninitialized: true })); 
+
 
 app.use('/', indexRouter);
 app.use('/',productoRouter);
