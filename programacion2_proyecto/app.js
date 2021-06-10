@@ -31,6 +31,13 @@ app.use(session( { secret: "Secretito",
                   resave: false, 
                  saveUninitialized: true })); 
 
+app.use((req,res,next)=>{
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    
+}
+return next()
+     })
 
 app.use('/', indexRouter);
 app.use('/',productoRouter);

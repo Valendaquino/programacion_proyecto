@@ -18,8 +18,14 @@ let controller = {
        res.render('login')
     },
     processLogin: function(req,res){
-    res.send('hola')
- 
+        db.User.findOne({
+            where: [{email: req.body.email}]
+        })
+ .then(user => {
+     req.session.user = user 
+     return res.redirect('/')
+}) 
+.catch(err=> console.log(err))
     },
 
 
