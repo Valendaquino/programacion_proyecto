@@ -23,6 +23,9 @@ let controller = {
         })
  .then(user => {
      req.session.user = user 
+     if(req.body.rememberme){
+         res.cookie('userId', user.id, {maxAge: 1000 * 60 * 10})
+     }
      return res.redirect('/')
 }) 
 .catch(err=> console.log(err))
@@ -48,6 +51,12 @@ let controller = {
                     } } )
                 .then(()=> res.redirect('/users'))
                 .catch(err => console.log(err))
+    },
+    logout:(req,res)=>{
+        req.session.destroy()
+        res.clearCookie('userId')
+        .then(()=> res.redirect('/'))
+        .catch(err => console.log(err))
     }
 
 }

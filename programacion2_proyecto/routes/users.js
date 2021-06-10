@@ -22,4 +22,5 @@ router.post('/ingresa', controller.processLogin);
 router.get('/miPerfil', controller.perfil);
 router.get('/editarPerfil/:id', controller.edit);
 router.get('/editarPerfil/:id', controller.update);
+router.post('/logout',controller.logout);
 module.exports = router;

@@ -39,6 +39,19 @@ app.use((req,res,next)=>{
 return next()
      })
 
+app.use((req, res, next)=> {
+  if( req.cookies.userId && req.session.user == undefined){
+
+    db.User.findByPk(req.cookies.userId)
+    .then(user =>{
+      req.session.user = user
+      res.locals = user
+    })
+    .catch (error => console.log(error))
+  }
+  return next ()
+})
+
 app.use('/', indexRouter);
 app.use('/',productoRouter);
 app.use('/', usersRouter);
