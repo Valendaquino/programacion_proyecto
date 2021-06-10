@@ -9,12 +9,14 @@ const op = db.Sequelize.Op;
 let controller = {
    index: function(req,res) {
        product.findAll({
-       where:[`date`],
-       order:[[`date`,`DESC`],],//preguntar si esto esá bien
+       order:[[`publish_date`,`DESC`]],//preguntar si esto esá bien
        limit:8,
       })
       .then((resultados)=> res.render(`index`,{resultados}))
-     .catch((err)=>`Error:${err}`)
+     .catch((err)=>{
+         res.send(err)
+         console.log(err);
+        })
 
      }
 }

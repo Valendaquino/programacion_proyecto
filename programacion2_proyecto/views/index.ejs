@@ -22,7 +22,7 @@
 			<div class="col-12">
 				<div class="separadores"><h2 class="product-tittle">Novedades</h2></div>
 			</div>
-			<% for(let i = 0 ; i<resultados.lenght; i++) {  %> 
+			<% for(let i = 0 ; i<resultados.length; i++) {  %> 
 
 			<!-- Show the "ultimos" products -->
 			
@@ -30,11 +30,11 @@
 				<section class="product-box">
 					<a href="/producto/<%=resultados[i].id %> ">
 						<figure class="product-box_image">
-							<img class= "img-producto" src="<%=producto[i].imagen %> " alt="<%=producto[i].nombre%>">
+							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_%>">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=producto[i].nombre%></h2>
-							<p><%=producto[i].descripcion%></p>
+							<h2><%=resultados[i].name_%></h2>
+							<p><%=resultados[i].description%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -57,13 +57,13 @@
 			
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/producto/<%=producto[i].id %> ">
+					<a href="/producto/<%=resultados[i].id %> ">
 						<figure class="product-box_image">
-							<img class= "img-producto" src="<%=producto[i].imagen %> " alt="<%=producto[i].nombre%>">
+							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_%>">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=producto[i].nombre%></h2>
-							<p><%=producto[i].descripcion%></p>
+							<h2><%=resultados[i].name_%></h2>
+							<p><%=resultados[i].description%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -87,13 +87,13 @@
 			
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/producto/<%=producto[i].id %> ">
+					<a href="/producto/<%=resultados[i].id %> ">
 						<figure class="product-box_image">
-							<img class= "img-producto" src="<%=producto[i].imagen %> " alt="<%=producto[i].nombre%>">
+							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %>" alt="<%=resultados[i].name_%>">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=producto[i].nombre%></h2>
-							<p><%=producto[i].descripcion%></p>
+							<h2><%=resultados[i].name_%></h2>
+							<p><%=resultados[i].description%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>

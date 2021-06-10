@@ -21,12 +21,12 @@ module.exports = (sequelize, dataTypes)=>{
     }
 
     const Type_product = sequelize.define(alias, cols, config);
-    Type_product.associate = (models)=>{
-        Type_product.hasMany(models.Product, {
-            as:'product',
-            foreingKey: 'type_id'
-        })
-    }
+    // Type_product.associate = (models)=>{
+    //     Type_product.hasMany(models.Product, {
+    //         as:'product',
+    //         foreingKey: 'type_id'
+    //     })
+    // }
 
     return Type_product;
 

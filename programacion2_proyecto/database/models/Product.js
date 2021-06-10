@@ -1,4 +1,3 @@
-const { FOREIGNKEYS } = require("sequelize/types/lib/query-types");
 
 module.exports = (sequelize, dataTypes)=>{
 
@@ -22,7 +21,7 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING,
             allowNull: false
         },
-        img_url:{
+        url_image:{
             type: dataTypes.STRING,
             allowNull: false
         },
@@ -31,10 +30,13 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
 
-        product_type:{
+       type_id:{
         type: dataTypes.INTEGER,
          allowNull: false
- }
+        },
+        updated_at:{
+            type:dataTypes.DATE
+         }
 
     };
     let config = {
@@ -45,22 +47,22 @@ module.exports = (sequelize, dataTypes)=>{
 
     const Product = sequelize.define(alias, cols, config)
 
-    Product.associate = (models)=>{
-        Product.belongsTo(models.User,{
-            as:'user',
-            foreingKey:'user_id'
-        });
-        Product.belongsTo(models.Type_product,{
-            as:'type_product',
-            foreingKey:'type_id'
+    // Product.associate = (models)=>{
+    //     Product.belongsTo(models.User,{
+    //         as:'user',
+    //         foreingKey:'user_id'
+    //     });
+    //     Product.belongsTo(models.Type_product,{
+    //         as:'type_product',
+    //         foreingKey:'type_id'
 
-        });
+    //     });
         
-        Product.hasMany(models.Comment, {
-            as:'comments',
-            foreingKey: 'product_id'
-        })
-    }
+    //     Product.hasMany(models.Comment, {
+    //         as:'comments',
+    //         foreingKey: 'product_id'
+    //     })
+    // }
 
 
     return Product;
