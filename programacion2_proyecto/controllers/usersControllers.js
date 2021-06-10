@@ -55,8 +55,7 @@ let controller = {
     logout:(req,res)=>{
         req.session.destroy()
         res.clearCookie('userId')
-        .then(()=> res.redirect('/'))
-        .catch(err => console.log(err))
+        res.redirect('/')
     }
 
 }
