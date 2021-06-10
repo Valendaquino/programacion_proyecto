@@ -10,7 +10,8 @@ let controller = {
    index: function(req,res) {
        product.findAll({
        order:[[`publish_date`,`DESC`]],//preguntar si esto esá bien
-       limit:8,
+       limit:8, 
+      
       })
       .then((resultados)=> res.render(`index`,{resultados}))
      .catch((err)=>{

@@ -16,7 +16,19 @@ let controller = {
     },
     login: function(req,res){
        res.render('login')
-   },
+    },
+    processLogin: function(req,res){
+        db.User.findOne({
+            where: [{email: req.body.email}]
+        })
+ .then(user => {
+     req.session.user = user 
+     return res.redirect('/')
+}) 
+.catch(err=> console.log(err))
+    },
+
+
    perfil: function(req,res){
        res.render('profile', {'producto':producto})
    },
