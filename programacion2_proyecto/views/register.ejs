@@ -1,15 +1,19 @@
 <%- include('./partials/headerDeslogueado') %>
 
-	<!-- Novedades -->
+	
 	<div class="container products-wrapper">
 		<div class="">
 			<div class="col-12">
 			<h2 class="products-title">Registrate</h2> 
 			</div>
-			<!-- Show the "ultimos" products -->
+			<% if(locals.errors){ %>
+				<p class="alert" > <%= errors.register %><p>
+			<% } %>
+			
+			
 		<div class="contenedor">
 			<div class="formulario">
-				<form action="./miPerfil" method="POST" enctype="multipart/form-data">
+				<form action="/creaTuCuenta" method="POST" enctype="multipart/form-data">
 					<label class="form-label" for="">Nombre:</label>
 					<input class="form-input" name="nombre" value=""  type="text" placeholder="Pepito...">
 
@@ -17,7 +21,7 @@
 					<input class="form-input" name="apellido" value=""  type="text" placeholder="Gomez...">
 
 					<label  class="form-label" for="start">Fecha de nacimiento:</label>
-					<input  class="form-input" type="date" id="start" name="trip-start"
+					<input  class="form-input" type="date" id="start" name="nacimiento"
        				value="2018-07-22"
        				min="1970-01-01" max="2018-12-31">
 
@@ -31,10 +35,10 @@
 					<input type="file" class="form-input" name="img">
 
 					<label class="form-label" for="">Contraseña:</label>
-					<input class="form-input" name="contrasena" value=""  type="text" placeholder="*******">
+					<input class="form-input" name="password" value=""  type="text" placeholder="*******">
 
 					<label class="form-label" for="">Confirmar contraseña:</label>
-					<input class="form-input"  name="con_contra" value="" type="text" placeholder="*******">
+					<input class="form-input"  name="repassword" value="" type="text" placeholder="*******">
 					<div class="button">
 					<button type="submit"  class="boton"> Iniciar sesion</button>
 					</div>

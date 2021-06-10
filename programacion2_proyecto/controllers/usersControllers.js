@@ -1,6 +1,6 @@
 const db = require('../database/models');
 const product = db.Product;
-const user= db.User;
+const users= db.User;
 const comment = db.Comment;
 const type = db.Type_product;
 
@@ -12,7 +12,98 @@ let controller = {
   
        }, 
     register: function(req,res){
-        res.render('register')
+        if(req.session.user != undefined){
+            return res.redirect('/creatuCuenta')
+        } else {
+            return res.render('register')
+        }
+
+    },
+    store: function(req,res){
+        let errors = {};
+        //chequear los campos obligatorios
+       if(req.body.nombre == ""){ 
+            errors.register = "El nombre no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+
+        }else if (req.body.apellido == ""){
+            errors.register = "El apellido no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+
+        } else if (req.body.nacimiento == ""){
+            errors.register = "La fecha de nacimiento no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+
+        }
+        else if (req.body.email == ""){
+            errors.register = "El e-mail no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+        }
+        else if (req.body.username == ""){
+            errors.register = "El nombre de usuario no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+
+        }
+        //foto de perfil
+        else if (req.body.password == ""){ 
+            errors.register = "Password no puede estar vacia"
+            res.locals.errors = errors
+            return res.render('register')
+        } 
+        else if(req.body.repassword == ""){
+            errors.register = "Re escribir password no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('register')
+        }  
+        else {
+        users.findOne(
+            {where: [{ email : req.body.email}]
+        })
+         .then( user => {
+             if(user !== null){ 
+                 errors.register = "Email ya existe"
+                 res.locals.errors = errors
+
+                 return res.render('register')
+             }  else if(req.body.usuario == username){ //se puede?
+                errors.register = "Ya existe ese nombre de usuario"
+                res.locals.errors = errors
+
+                return res.render('register')
+            }
+             
+             else if(req.body.password != req.body.repassword ){
+                 errors.register = "Los password no coinciden"
+                 res.locals.errors = errors
+
+                 return res.render('register')
+             } else {
+                 let user = {
+                     name_users : req.body.nombre,
+                     surname: req.body.apellido,
+                     birth_date: req.body.nacimiento, 
+                     email: req.body.email,
+                     username: req.body.usuario,
+                     profile_photo: req.file.filename,
+                     password_: bcrypt.hashSync(req.body.password, 10),
+                     confirm_password: bcrypt.hashSync(req.body.repassword, 10)
+                     // pasar updated y created at.
+                 }
+                 users.create(user)
+                     .then( user => {
+                         return res.redirect('/ingresa')
+                     })
+                     .catch( err => console.log(err))
+             }
+         })
+         .catch( err =>res.send(err))
+    }
+
     },
     login: function(req,res){
        res.render('login')
