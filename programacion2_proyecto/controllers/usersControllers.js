@@ -107,17 +107,35 @@ let controller = {
     },
     login: function(req,res){
        res.render('login')
+       if(req.session.user != undefined){
+        return res.redirect('/ingresa')
+    } else {
+        return res.render('login')
+    }
     },
     processLogin: function(req,res){
+        let errors = {}
         db.User.findOne({
             where: [{email: req.body.email}]
         })
  .then(user => {
-     req.session.user = user 
-     if(req.body.rememberme){
-         res.cookie('userId', user.id, {maxAge: 1000 * 60 * 10})
-     }
-     return res.redirect('/')
+if(user == null){
+    errors.login = "el email es incorrecto";
+    res.locals.errors = errors
+    return res.render('login')
+}
+else if(bcrypt.compareSync(req.body.password,user.password_) == false){
+    errors.login = "la contrasenia es incorrecta"
+    res.locals.errors = errors
+    return res.render('login')
+}
+else{
+    req.session.user = user
+    if(req.body.rememberme != undefined){
+        res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 5});
+    }
+}
+return res.redirect('/');
 }) 
 .catch(err=> console.log(err))
     },
