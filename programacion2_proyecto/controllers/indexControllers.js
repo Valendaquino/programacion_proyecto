@@ -2,19 +2,24 @@ const db = require('../database/models');
 const product = db.Product;
 const user= db.User;
 const comment = db.Comment;
-const type = db.Type_product;
+const genre= db.Genre;
 
 const op = db.Sequelize.Op;
 
 let controller = {
    index: function(req,res) {
        product.findAll({
+       include: [ {association:'user'}, {association:'genre'}],
        order:[[`publish_date`,`DESC`]],//preguntar si esto esá bien
-       limit:8, 
+       limit:8
+       
       
       })
-      .then((resultados)=> res.render(`index`,{resultados}))
-     .catch((err)=>{
+      .then((resultados)=>
+       //res.send(resultados)
+        res.render(`index`,{resultados})
+      )
+      .catch((err)=>{
          res.send(err)
          console.log(err);
         })

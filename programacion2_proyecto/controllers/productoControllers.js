@@ -2,7 +2,7 @@ const db = require('../database/models');
 const product = db.Product;
 const user= db.User;
 const comment = db.Comment;
-const type = db.Type_product;
+const genre = db.Genre;
 
 const op = db.Sequelize.Op;
 
@@ -16,8 +16,8 @@ let controller = {
     },
     add:function(req,res){
         type.findAll()
-        .then (function(type_product){
-            return res.render('product-add', {type_product})
+        .then (function(types){
+            return res.render('product-add', {types})
         })
         .catch(err => console.log(err))
         
@@ -45,11 +45,17 @@ let controller = {
        
     let primaryKey= req.params.id
         product.findByPk(primaryKey, {
-            include: [{association:'type_product'}, {association:'user'}, {association:'comments'}]//está bien comments?
+            include: [ {association:'user'}]
             
         })
-        .then((resultados)=> res.render(`product`,{resultados}))
-        .catch((err)=>`Error:${err}`)
+        .then((resultados)=> 
+        //res.send(resultados)
+       res.render(`product`,{resultados})
+        )
+        .catch((err)=>{
+            res.send(err)
+            console.log(err);
+           })
         
         
     },

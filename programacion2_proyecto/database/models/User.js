@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes)=>{
         
         };
     let config = {
-        table: "users",
+        tableName: "users",
         timestamps: false,
         underscored: true
     }
@@ -55,7 +55,7 @@ module.exports = (sequelize, dataTypes)=>{
     const User = sequelize.define(alias, cols, config)
 
    User.associate = (models)=>{
-        User.belongsTo(models.Product,{
+        User.hasMany(models.Product,{
             as:'product',
             foreingKey:'user_id'
         });

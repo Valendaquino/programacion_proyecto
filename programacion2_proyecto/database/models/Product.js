@@ -30,9 +30,9 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
 
-       type_id:{
-        type: dataTypes.INTEGER,
-         allowNull: false
+        genre_id:{
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         updated_at:{
             type:dataTypes.DATE
@@ -40,29 +40,29 @@ module.exports = (sequelize, dataTypes)=>{
 
     };
     let config = {
-        table: "Products",
+        tableName: "products",
         timestamps: false,
         underscored: true
     }
 
     const Product = sequelize.define(alias, cols, config)
 
-    // Product.associate = (models)=>{
-    //     Product.belongsTo(models.User,{
-    //         as:'user',
-    //         foreingKey:'user_id'
-    //     });
-    //     Product.belongsTo(models.Type_product,{
-    //         as:'type_product',
-    //         foreingKey:'type_id'
+    Product.associate = (models)=>{
+        Product.belongsTo(models.User,{
+            as:'user',
+            foreingKey:'user_id'
+        });
+        Product.belongsTo(models.Genre,{
+            as:'genre',
+            foreingKey:'genre_id'
 
-    //     });
+        });
         
-    //     Product.hasMany(models.Comment, {
-    //         as:'comments',
-    //         foreingKey: 'product_id'
-    //     })
-    // }
+        Product.hasMany(models.Comment, {
+            as:'comments',
+            foreingKey: 'product_id'
+        })
+    }
 
 
     return Product;

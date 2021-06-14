@@ -2,7 +2,7 @@ const db = require('../database/models');
 const product = db.Product;
 const users= db.User;
 const comment = db.Comment;
-const type = db.Type_product;
+const genre= db.Genre;
 
 const op = db.Sequelize.Op;
 
@@ -106,44 +106,44 @@ let controller = {
 
     },
     login: function(req,res){
-       res.render('login')
-       if(req.session.user != undefined){
-        return res.redirect('/ingresa')
-    } else {
-        return res.render('login')
-    }
+        res.render('login')
+        if(req.session.user != undefined){
+            return res.redirect('/ingresa')
+        } else {
+            return res.render('login')
+        }
     },
     processLogin: function(req,res){
         let errors = {}
         db.User.findOne({
             where: [{email: req.body.email}]
         })
- .then(user => {
-if(user == null){
-    errors.login = "el email es incorrecto";
-    res.locals.errors = errors
-    return res.render('login')
-}
-else if(bcrypt.compareSync(req.body.password,user.password_) == false){
-    errors.login = "la contrasenia es incorrecta"
-    res.locals.errors = errors
-    return res.render('login')
-}
-else{
-    req.session.user = user
-    if(req.body.rememberme != undefined){
-        res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 5});
-    }
-}
-return res.redirect('/');
-}) 
-.catch(err=> console.log(err))
-    },
+        .then(user => {
+        if(user == null){
+            errors.login = "el email es incorrecto";
+            res.locals.errors = errors
+            return res.render('login')
+        }
+        else if(bcrypt.compareSync(req.body.password,user.password_) == false){
+            errors.login = "la contrasenia es incorrecta"
+            res.locals.errors = errors
+            return res.render('login')
+        }
+        else{
+            req.session.user = user
+            if(req.body.rememberme != undefined){
+                res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 5});
+            }
+        }
+        return res.redirect('/');
+        }) 
+        .catch(err=> console.log(err))
+            },
 
 
    perfil: function(req,res){
-       res.render('profile', {'producto':producto})
-   },
+        res.render('profile', {'producto':producto})
+    },
    edit: function(req,res){
         let primaryKey=req.params.id
         product.findByPk(primaryKey)

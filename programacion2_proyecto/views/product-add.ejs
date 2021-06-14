@@ -28,11 +28,11 @@
 					<div class="mb-3">
 						<label class="form-label"> Genero</label>
 						<select name="form-control" name="type_id" id="">
-							<% for (let i=0; i<type_product.length; i++){ %>
-							<option value="<%= type_product[i].id%>">
-								<%= type_product[i].type_product%>
-							</option>
-							<%}%>
+							<% for (let i=0; i<types.length; i++){ %>
+								<option value="<%= types[i].id%>">
+									<%= types[i].type_product%>
+								</option>
+								<%}%> 
 						</select>
 					</div>
 

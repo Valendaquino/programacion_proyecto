@@ -30,12 +30,12 @@
 				<section class="product-box">
 					<a href="/producto/<%=resultados[i].id %> ">
 						<figure class="product-box_image">
-							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_%>">
+							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_ %>">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=resultados[i].name_%></h2>
+							<h2><%=resultados[i].name_ %></h2>
 							<p><%=resultados[i].description%></p>
-							<p>Comentarios: 12</p>
+							
 						</article>
 					</a>
 				</section>
@@ -51,7 +51,7 @@
 				<div></div>
 				<div class="separadores"><h2 class="product-tittle">Mas comentados</h2></div>
 			</div>
-			<% for(let i = 0 ; i<8; i++) {  %> 
+			<% for(let i = 0 ; resultados.length<8; i++) {  %> 
 
 			<!-- Show the "ultimos" products -->
 			
@@ -70,7 +70,7 @@
 				</section>
 			</div>
 			   <%  } %> 
-		</div> 
+		</div>  
 	</div>
 	<!-- /Más comentados -->
 
@@ -81,7 +81,7 @@
 			<div class="col-12">
 				<div class="separadores"><h2 class="product-tittle">Mejores puntuados</h2></div>
 			</div>
-			<% for(let i = 0 ; i<8; i++) {  %> 
+			<% for(let i = 0 ; resultados.length<8; i++) {  %> 
 
 			<!-- Show the "ultimos" products -->
 			
