@@ -21,7 +21,19 @@ let controller = {
          res.send(err)
          console.log(err);
         })
-
+        comment.findAll({
+         include: [ {association:'product'},],
+         order:[[``,`DESC`]],
+         limit:8
+        })
+        .then((resultados)=>
+         //res.send(resultados)
+          res.render(`index`,{resultados})
+        )
+        .catch((err)=>{
+           res.send(err)
+           console.log(err);
+          })
      }
 }
 module.exports = controller;

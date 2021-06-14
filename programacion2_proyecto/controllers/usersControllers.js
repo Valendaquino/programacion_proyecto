@@ -143,6 +143,7 @@ let controller = {
 
    perfil: function(req,res){
         res.render('profile', {'producto':producto})
+        
     },
    edit: function(req,res){
         let primaryKey=req.params.id
