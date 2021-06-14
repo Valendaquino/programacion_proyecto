@@ -10,10 +10,8 @@ let controller = {
    index: function(req,res) {
        product.findAll({
        include: [ {association:'user'}, {association:'genre'}],
-       order:[[`publish_date`,`DESC`]],//preguntar si esto esá bien
+       order:[[`publish_date`,`DESC`]],
        limit:8
-       
-      
       })
       .then((resultados)=>
        //res.send(resultados)

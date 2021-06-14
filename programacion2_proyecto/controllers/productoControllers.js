@@ -11,13 +11,13 @@ let controller = {
         res.render('index', {'producto':producto})
        },
     
-    agregarproducto: function(req,res){
-        res.render('product-add')
-    },
+    // agregarproducto: function(req,res){
+    //     res.render('product-add')
+    // },
     add:function(req,res){
-        type.findAll()
-        .then (function(types){
-            return res.render('product-add', {types})
+        genre.findAll()
+        .then (function(genres){
+            return res.render('product-add', {genres})
         })
         .catch(err => console.log(err))
         
@@ -28,7 +28,7 @@ let controller = {
             publish_date: req.body.publish_date,
             description: req.body.description,
             url_image: req.body.img,
-            type_id:req.body.type_id
+            genre_id:req.body.genre_id
             //hay q poner el update ?
             //como incluyo acá la association
             //como hacer q el publish y updated at se gcarguen solos
