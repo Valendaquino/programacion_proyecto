@@ -22,22 +22,34 @@ let controller = {
         .catch(err => console.log(err))
         
     },
-    almacenar:function(req,res){
-        let product = {
-            name_: req.body.name,
-            publish_date: req.body.publish_date,
-            description: req.body.description,
-            url_image: req.body.img,
-            genre_id:req.body.genre_id
-            //hay q poner el update ?
-            //como incluyo acá la association
-            //como hacer q el publish y updated at se gcarguen solos
-        } 
+    almacenar: function(req,res){
+       
+        let errors = {};
+        //chequear los campos obligatorios
+       if(req.body.name== ""){ 
+            errors.register = "El nombre no puede estar vacio"
+            res.locals.errors = errors
+            return res.render('product-add')
 
-        db.Product.create(product)
+        }else if (req.body.description== ""){
+            errors.register = "Debes escribir una descripción"
+            res.locals.errors = errors
+            return res.render('product-add')
+             } else {
+                let product = {
+                    name_: req.body.name,
+                    publish_date: req.body.publish_date,
+                    description: req.body.description,
+                    url_image: req.body.img,
+                    genre_id:req.body.genre_id
+                   
+                } 
+                db.Product.create(product)
         
-            .then(() => res.redirect('/product'))
-            .catch(err => console.log(err))
+                .then(() => res.redirect('/product'))
+                .catch(err => console.log(err))
+                }
+       
     },
 
    
@@ -56,11 +68,9 @@ let controller = {
             res.send(err)
             console.log(err);
            })
-        
-        
     },
     search: function(req,res){
-        let serchData= req.query.search.
+        let serchData= req.query.search
         product.findAll({
             where:[{name_: {[op.like]:`${serchData}`}}],
          // que onda esto ?   where:[{type_id: {[op.like]:`${serchData}`}}] 
@@ -81,7 +91,7 @@ let controller = {
     edit: function(req,res){
         let primaryKey=req.params.id
         product.findByPk(primaryKey, {
-            include: [{association:'type_product'}, {association:'user'}]
+            include: [{association:'genre'}, {association:'user'}]
         })
         .then(resultados => res.render('product-edit', { resultados }))
         .catch(err => console.log(err))

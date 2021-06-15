@@ -120,12 +120,12 @@ let controller = {
         })
         .then(user => {
         if(user == null){
-            errors.login = "el email es incorrecto";
+            errors.login = "El email es incorrecto";
             res.locals.errors = errors
             return res.render('login')
         }
         else if(bcrypt.compareSync(req.body.password,user.password_) == false){
-            errors.login = "la contrasenia es incorrecta"
+            errors.login = "La contraseña es incorrecta"
             res.locals.errors = errors
             return res.render('login')
         }
@@ -142,7 +142,7 @@ let controller = {
 
 
    perfil: function(req,res){
-        res.render('profile', {'producto':producto})
+    
         
     },
    edit: function(req,res){
