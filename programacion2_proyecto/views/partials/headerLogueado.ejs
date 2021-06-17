@@ -50,10 +50,10 @@
 	
 			<ul class="right-navbar">
 					<% if(locals.name_users){%>
-					<li> <%=locals.name_users%> </li>
+					<li> <a href="/miPerfil"> <%=locals.users.name_users%> </a></li>
 					<li >
-						<form action="users/logout" method="POST">
-							<a href="/ingresa" >Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
+						<form action="users" method="POST">
+							<a href="/logout" >Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
 						</form>
 						</li>
 					<% }
@@ -65,8 +65,8 @@
 					<li>
 						<a href="/ingresa">Ingresá <i class="fas fa-sign-in-alt"></i></a>
 					</li> 
-					<%	
-				}%>
+					<%}
+					%>
 			</ul>
 			</nav>
 		</div>
