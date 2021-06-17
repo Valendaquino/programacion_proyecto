@@ -54,7 +54,7 @@ module.exports = (sequelize, dataTypes)=>{
             as:'genre',
             foreingKey:'genre_id'
 
-        });
+ });
         
         Product.hasMany(models.Comment, {
             as:'comments',
