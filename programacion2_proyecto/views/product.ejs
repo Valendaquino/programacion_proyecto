@@ -4,7 +4,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.nombre%> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit/<%=resultados.id%>">Editar</a>
+				<a href="/product/edit/<%=producto.id%>">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -16,15 +16,15 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% let comentarios = producto.comentarios%>
-						<% for (let i=0; i<5; i++){ %>
+						<% let comments = producto.comments %> 
+						<% for (let i=0; i<comments.length; i++){ %>
 
 						
 						<article>
-							<img src="<%=comentarios[i].foto_perfil%>" alt="">
+							<img src="<%=comments[i].foto_perfil%>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/miPerfil"><%=comentarios[i].nombre%> </a> </strong>
+								<strong> <a href="/miPerfil"><%=comments[i].user.username%> </a> </strong>
 								<%=comentarios[i].texto%></p>
 							</div>
 						</article>

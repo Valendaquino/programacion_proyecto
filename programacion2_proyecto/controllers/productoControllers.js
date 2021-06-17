@@ -56,7 +56,8 @@ let controller = {
        
     let primaryKey= req.params.id
         product.findByPk(primaryKey, {
-            include: [ {association:'user'}]
+            include: [ {association:'user'}, {association:'comments'}]
+
             
         })
         .then((producto)=> 
