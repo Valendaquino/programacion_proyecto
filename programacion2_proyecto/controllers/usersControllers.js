@@ -92,7 +92,7 @@ let controller = {
                      profile_photo: req.file.filename,
                      password_: bcrypt.hashSync(req.body.password, 10),
                      confirm_password: bcrypt.hashSync(req.body.repassword, 10)
-                     // pasar updated y created at.
+                     
                  }
                  users.create(user)
                      .then( user => {
@@ -108,7 +108,7 @@ let controller = {
     login: function(req,res){
         res.render('login')
         if(req.session.user != undefined){
-            return res.redirect('/ingresa')
+            return res.redirect('/')
         } else {
             return res.render('login')
         }

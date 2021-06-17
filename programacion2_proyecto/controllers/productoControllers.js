@@ -3,7 +3,6 @@ const product = db.Product;
 const user= db.User;
 const comment = db.Comment;
 const genre = db.Genre;
-
 const op = db.Sequelize.Op;
 
 let controller = {
@@ -40,7 +39,7 @@ let controller = {
                     name_: req.body.name,
                     publish_date: req.body.publish_date,
                     description: req.body.description,
-                    url_image: req.body.img,
+                    url_image: req.body.filename,
                     genre_id:req.body.genre_id
                    
                 } 
