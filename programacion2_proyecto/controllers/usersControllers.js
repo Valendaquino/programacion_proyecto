@@ -3,7 +3,7 @@ const product = db.Product;
 const users= db.User;
 const comment = db.Comment;
 const genre= db.Genre;
-
+const bcrypt = require('bcryptjs')
 const op = db.Sequelize.Op;
 
 let controller = {
@@ -20,6 +20,7 @@ let controller = {
 
     },
     store: function(req,res){
+        console.log(req.body)
         let errors = {};
         //chequear los campos obligatorios
        if(req.body.nombre == ""){ 
@@ -65,24 +66,29 @@ let controller = {
             {where: [{ email : req.body.email}]
         })
          .then( user => {
-             if(user !== null){ 
+             console.log('busca ek usuario');
+             if(user != null){ 
+                 console.log('usuario existe');
                  errors.register = "Email ya existe"
                  res.locals.errors = errors
 
                  return res.render('register')
-             }  else if(req.body.usuario == username){ //se puede?
-                errors.register = "Ya existe ese nombre de usuario"
-                res.locals.errors = errors
+             } 
+            //  else if(req.body.usuario == user.username){ 
+            //     console.log('username existe');
+            //     errors.register = "Ya existe ese nombre de usuario"
+            //     res.locals.errors = errors
 
-                return res.render('register')
-            }
-             
-             else if(req.body.password != req.body.repassword ){
+            //     return res.render('register')
+            // }
+            else if(req.body.password != req.body.repassword ){
+                 console.log('contraseña existe');
                  errors.register = "Los password no coinciden"
                  res.locals.errors = errors
 
                  return res.render('register')
              } else {
+                 console.log('Crea el usuario');
                  let user = {
                      name_users : req.body.nombre,
                      surname: req.body.apellido,
@@ -100,8 +106,12 @@ let controller = {
                      })
                      .catch( err => console.log(err))
              }
+             console.log('llego al final');
          })
-         .catch( err =>res.send(err))
+         .catch( err =>{
+             console.log(err);
+             res.send(err)
+            })
     }
 
     },

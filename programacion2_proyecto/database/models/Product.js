@@ -33,15 +33,13 @@ module.exports = (sequelize, dataTypes)=>{
         genre_id:{
             type: dataTypes.INTEGER,
             allowNull: false
-        },
-        updated_at:{
-            type:dataTypes.DATE
-         }
+        }
+      
 
     };
     let config = {
         tableName: "products",
-        timestamps: true,
+        timestamps:false,
         underscored: true
     }
 
