@@ -59,9 +59,9 @@ let controller = {
             include: [ {association:'user'}]
             
         })
-        .then((resultados)=> 
+        .then((producto)=> 
         //res.send(resultados)
-       res.render(`product`,{resultados})
+       res.render(`product`,{producto})
         )
         .catch((err)=>{
             res.send(err)

@@ -157,8 +157,11 @@ let controller = {
     },
    edit: function(req,res){
         let primaryKey=req.params.id
-        product.findByPk(primaryKey)
-        .then(resultados => res.render('profile-edit', { resultados }))
+        users.findByPk(primaryKey)
+        .then(resultados =>
+
+            res.render('profile-edit', { resultados })
+             )
         .catch(err => console.log(err))
    },
    update:function(req,res){
@@ -174,8 +177,8 @@ let controller = {
     },
     logout:(req,res)=>{
         req.session.destroy()
-        res.clearCookie('userId')
-        res.redirect('/')
+        res.clearCookie('userID')
+        res.redirect('/ingresa')
     }
 
 }

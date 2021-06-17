@@ -49,11 +49,12 @@
 				</ul>
 	
 			<ul class="right-navbar">
-					<% if(locals.name_users){%>
-					<li> <a href="/miPerfil"> <%=locals.users.name_users%> </a></li>
+					<% if(locals.user){%>
+					<li> <a href="/miPerfil"> <%=user.name_users%> </a></li>
 					<li >
-						<form action="users" method="POST">
-							<a href="/logout" >Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
+						<form action="/logout" method="POST">
+							<input class="fas fa-sign-in-alt" type="submit"   >
+							
 						</form>
 						</li>
 					<% }
