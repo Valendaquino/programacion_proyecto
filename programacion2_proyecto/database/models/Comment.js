@@ -12,10 +12,6 @@ module.exports = (sequelize, dataTypes)=>{
            
 
         },
-        comment_date: {
-            type: dataTypes.DATE,
-            allowNull: false
-        },
         user_id: {
             type: dataTypes.INTEGER,
            

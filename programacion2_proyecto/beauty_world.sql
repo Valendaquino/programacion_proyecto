@@ -16,20 +16,20 @@ CREATE TABLE users(
     updated_at DATE
 );
 
-CREATE TABLE genres(
+CREATE TABLE types_products(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(60) NOT NULL
+    type_product VARCHAR(60) NOT NULL
 );
 CREATE TABLE products(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name_ VARCHAR(50) NOT NULL,
-	publish_date DATE,
+	created_at DATE,
     description VARCHAR (500) NOT NULL,
     url_image VARCHAR(250),
     user_id INT UNSIGNED,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    genre_id INT UNSIGNED,
-	FOREIGN KEY (genre_id) REFERENCES genres(id),
+    type_id INT UNSIGNED,
+	FOREIGN KEY (type_id) REFERENCES types_products(id),
     updated_at DATE
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE products(
 CREATE TABLE comments(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     text_ VARCHAR (500),
-    comment_date DATE,
+    created_at DATE,
 	user_id INT UNSIGNED,
     product_id INT UNSIGNED,
 	FOREIGN KEY (user_id) REFERENCES users(id),
@@ -54,14 +54,14 @@ INSERT INTO users VALUES (default, 'Santiago', 'Salado', 'tot.salado', '1998/06/
 INSERT INTO users VALUES (default, 'Rocio', 'fagalde', 'rocifagalde', '2003/02/02',  'roci_fag@yahoo.com', 'holamanola','holamanola', 'milkBlush.jpg','2021/02/12' ,'2021/02/12');
 INSERT INTO users VALUES (default, 'Jose', 'Garcia', 'josecito_makeup', '2001/09/13',  'josecito123@yahoo.com', 'helloworld2','helloworld2','milkBlush.jpg', '2021/02/12', '2021/02/12');
 
-INSERT INTO genres VALUES (default, 'Mascaras y Delineadores');
-INSERT INTO genres VALUES (default, 'Bronzers');
-INSERT INTO genres VALUES (default, 'Bases y Correctores');
-INSERT INTO genres VALUES (default, 'Brochas y Esponjas');
-INSERT INTO genres VALUES (default, 'Sombras');
-INSERT INTO genres VALUES (default, 'Iluminadores y Rubores');
-INSERT INTO genres VALUES (default, 'Hidratantes y Primers');
-INSERT INTO genres VALUES (default, 'Pintalabios');
+INSERT INTO types_products VALUES (default, 'Mascaras y Delineadores');
+INSERT INTO types_products VALUES (default, 'Bronzers');
+INSERT INTO types_products VALUES (default, 'Bases y Correctores');
+INSERT INTO types_products VALUES (default, 'Brochas y Esponjas');
+INSERT INTO types_products VALUES (default, 'Sombras');
+INSERT INTO types_products VALUES (default, 'Iluminadores y Rubores');
+INSERT INTO types_products VALUES (default, 'Hidratantes y Primers');
+INSERT INTO types_products VALUES (default, 'Pintalabios');
 
 INSERT INTO products VALUES (default, 'MILK LIP + CHEEK', '2021/02/12','Una barra de color hidratante multiusos para labios y mejillas.', 'milkBlush.jpg', 2, 6, '2021/02/12');
 INSERT INTO products VALUES (default, 'LANCOME GRANDIOSE', '2021/01/02','Lancôme desvela con la máscara de pestañas Grandiôse una nueva técnica de aplicación para crear, sin esfuerzo, una mirada con unas pestañas perfectamente desplegadas, voluminosas y homogéneas.', 'lancomeMascara.png', 6, 6, '2021/02/12');

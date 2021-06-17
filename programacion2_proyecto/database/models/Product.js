@@ -13,10 +13,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
 
         },
-        publish_date: {
-            type: dataTypes.DATE,
-            allowNull: false
-        },
+        
         description: {
             type: dataTypes.STRING,
             allowNull: false
