@@ -95,7 +95,7 @@ let controller = {
                      birth_date: req.body.nacimiento, 
                      email: req.body.email,
                      username: req.body.usuario,
-                     profile_photo: req.file.filename,
+                     //profile_photo: req.file.filename,
                      password_: bcrypt.hashSync(req.body.password, 10),
                      confirm_password: bcrypt.hashSync(req.body.repassword, 10)
                      

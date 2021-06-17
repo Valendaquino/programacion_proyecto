@@ -48,16 +48,16 @@
 					
 				</ul>
 	
-				<ul class="right-navbar">
-					<% if(locals.name_users){%> 
+			<ul class="right-navbar">
+					<% if(locals.name_users){%>
 					<li> <%=locals.name_users%> </li>
 					<li >
 						<form action="users/logout" method="POST">
 							<a href="/ingresa" >Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
 						</form>
 						</li>
-			<% }
-			else{ %> 
+					<% }
+					else{ %> 
 					<li>
 						<a href="/creaTuCuenta">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
@@ -67,7 +67,7 @@
 					</li> 
 					<%	
 				}%>
-				</ul>
+			</ul>
 			</nav>
 		</div>
 	</header>
