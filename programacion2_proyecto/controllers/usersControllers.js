@@ -167,12 +167,12 @@ let controller = {
    update:function(req,res){
         let primaryKey=req.params.id
             let userUpdate=req.body
-                user.update(
+                users.update(
                     userUpdate,
                     {where:{
                         id: primaryKey
                     } } )
-                .then(()=> res.redirect('/users'))
+                .then(()=> res.redirect('/ingresa'))
                 .catch(err => console.log(err))
     },
     logout:(req,res)=>{
