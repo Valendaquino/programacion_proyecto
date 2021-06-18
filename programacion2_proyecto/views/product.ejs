@@ -2,30 +2,32 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.nombre%> </h2> 
+			<h2 class="products-title"><%= producto.name_ %> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit/<%=producto.id%>">Editar</a>
+				<a href="/editProduct/<%=producto.id %>">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 			
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagen%> " alt="" class="product-detail-img">
-					<p class="product-detail-description"><%= producto.descripcion %> </p>
+					<img src=" /images/products/<%= producto.url_image %> " alt="" class="product-detail-img">
+					<h3 class="product-detail-description"> Publicacion de <%= producto.user_id %> </h3>
+					<p class="product-detail-description"><%= producto.description %> </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% let comments = producto.comments %> 
 						<% for (let i=0; i<comments.length; i++){ %>
 
-						
 						<article>
-							<img src="<%=comments[i].foto_perfil%>" alt="">
+							<img class= "img-producto" src="/images/users/<%=comments[i].url_image %> " alt="<%=comments[i].user_id%>">
 							<div class="data">
-								<p class="user">
-								<strong> <a href="/miPerfil"><%=comments[i].user.username%> </a> </strong>
-								<%=comentarios[i].texto%></p>
+								
+								<strong class="user" > <a href="/miPerfil"> <%= comments[i].user_id%> </a> </strong>
+								<p>
+								<%= comments[i].text_ %>
+								</p>
 							</div>
 						</article>
 						<%}%>

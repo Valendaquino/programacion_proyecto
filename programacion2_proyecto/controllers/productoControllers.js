@@ -61,7 +61,7 @@ let controller = {
             
         })
         .then((producto)=> 
-        //res.send(resultados)
+        //res.send(producto)
        res.render(`product`,{producto})
         )
         .catch((err)=>{

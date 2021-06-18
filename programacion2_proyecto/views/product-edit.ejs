@@ -8,43 +8,45 @@
 				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<div class="contenedor">
-			<div>
-				<div style="width:100%;height:0;padding-bottom:138%;position:relative;"><iframe src="https://giphy.com/embed/3mJZaMnMZpVbNT3CkZ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/stickers/maybelline-3mJZaMnMZpVbNT3CkZ"></a></p>
-			</div>
+			<div class="contenedor" class="product-detail" >
+			
+				<img src=" /images/products/<%= resultados.url_image %> " alt="" class="product-detail-img">
+				
+			
 			<div class="formulario">
 				<form action="/producto/edit/" method="POST">
 					<label class="form-label" for="">Nombre:</label>
-					<!-- porqué no toma el _? -->
-					<input class="form-input" name="nombre" value="<%=resultados.name_%>"  type="text" placeholder="Pepito...">
+					
+					<input class="form-input" name="nombre" value="<%=resultados.name_ %>"  type="text" >
 	
 					<label class="form-label" for="">Descripcion:</label>
-					<input class="form-input" name="usuario" value="<%=resultados.description%>"  type="text" placeholder="Gomez...">
-	
-					<label class="form-label" class="form-label" for="">Imagen:</label>
-					<input class="form-input" name="email" value="<%=resultados.image%>"  type="email" placeholder="email">
+					<textarea name="description" value="<%= resultados.description %>"   class="form-input" rows="5" cols="50"><%= resultados.description %></textarea>
 
-					<!-- como hacemos esto? -->
+					<label for="" class="form-label">Inserta nueva imagen de tu producto</label>
+					<input type="file" class="form-input" name="img">
+
 					<label class="form-label" for="">Tipo de producto:</label> 
-					<input class="form-input" name="web" value="<%=resultados.type_id%>"  type="text" placeholder="sitio web">
-	
+					<input class="form-input" name="web" value="<%=resultados.genre.name%>"  type="text" >
 					
-					<label class="form-label" for="">Día de publicación:</label>
-					<input class="form-input" name="telefono" value="<%=resultados.publish_date%>"  type="number" placeholder="+54">
-					
+
+					<!-- como imprimimos la fecha de creacion de la publicacion?-->
+					<label class="form-label" for=""> Día de publicación:</label>
+					<input class="form-input" name="telefono" value="<%=resultados.timestamps%>"  type="number" >
+					<!-- como imprimimos la fecha de creacion de la publicacion?-->
 					<label class="form-label" for="">Día de actualización:</label>
-					<input class="form-input" name="telefono" value="<%=resultados.updated_at%>"  type="number" placeholder="+54">
+					<input class="form-input" name="telefono" value="<%=resultados.timestamps%>"  type="number">
 					
 
 					<div class="button">
 					<button type="submit" class="boton"> Guardar cambios</button> 
                      
 					</div>
+					
 				</form>
-            
 				<form style="display: inline;" action="/producto/<%=resultados.id %>" method="POST">
-					<button class="btn btn-danger" type="submit">Borrar</button>
+					<button class="boton" type="submit">Borrar</button>
 				</form>
+        
 			</div>
 			</div>
 		</div>	
