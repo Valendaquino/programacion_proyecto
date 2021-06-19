@@ -88,14 +88,16 @@ let controller = {
         .then(()=> res.redirect('/product'))
         .catch(err=> console.log(err))
     },
-    edit: function(req,res){
+    edit:  function(req,res){
         let primaryKey=req.params.id
         product.findByPk(primaryKey, {
             include: [{association:'genre'}, {association:'user'}]
         })
         .then(resultados => res.render('product-edit', { resultados }))
         .catch(err => console.log(err))
-    },
+    
+   }, 
+
     update: function(req,res){
         let primaryKey=req.params.id
         let productUpdate=req.body
