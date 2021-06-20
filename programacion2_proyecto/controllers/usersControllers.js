@@ -95,7 +95,7 @@ let controller = {
                      birth_date: req.body.nacimiento, 
                      email: req.body.email,
                      username: req.body.usuario,
-                     //profile_photo: req.file.filename,
+                     profile_photo: "default-image.png",
                      password_: bcrypt.hashSync(req.body.password, 10),
                      confirm_password: bcrypt.hashSync(req.body.repassword, 10)
                      
@@ -130,19 +130,19 @@ let controller = {
         })
         .then(user => {
         if(user == null){
-            errors.login = "El email es incorrecto";
+            errors.login = "El email o la contraseña son incorrectas";
             res.locals.errors = errors
             return res.render('login')
         }
         else if(bcrypt.compareSync(req.body.password,user.password_) == false){
-            errors.login = "La contraseña es incorrecta"
+            errors.login = "El email o la contraseña son incorrectas"
             res.locals.errors = errors
             return res.render('login')
         }
         else{
             req.session.user = user
             if(req.body.rememberme != undefined){
-                res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 5});
+                res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 10});
             }
         }
         return res.redirect('/');
@@ -152,7 +152,18 @@ let controller = {
 
 
    perfil: function(req,res){
-    
+        let user_id = req.params.id
+           product.findAll({
+            where:[{user_id: {[op.like]:`${user_id}`}}]
+            })
+        .then((producto)=> 
+        
+          res.render(`profile`,{producto})
+        )
+        .catch((err)=>{
+            res.send(err)
+            console.log(err);
+        })
         
     },
    edit: function(req,res){
@@ -167,12 +178,13 @@ let controller = {
    update:function(req,res){
         let primaryKey=req.params.id
             let userUpdate=req.body
+           //No anda el update
                 users.update(
                     userUpdate,
                     {where:{
                         id: primaryKey
                     } } )
-                .then(()=> res.redirect('/ingresa'))
+                .then(()=> res.redirect('/'))
                 .catch(err => console.log(err))
     },
     logout:(req,res)=>{

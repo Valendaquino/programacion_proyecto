@@ -19,7 +19,7 @@ router.get('/creaTuCuenta', controller.register);
 router.post('/creaTuCuenta', upload.single('img'), controller.store);
 router.get('/ingresa', controller.login);
 router.post('/ingresa', controller.processLogin);
-router.get('/miPerfil', controller.perfil);
+router.get('/miPerfil/:id', controller.perfil);
 router.get('/editarPerfil/:id', controller.edit);
 router.post('/editarPerfil/:id', controller.update);
 router.post('/logout',controller.logout);

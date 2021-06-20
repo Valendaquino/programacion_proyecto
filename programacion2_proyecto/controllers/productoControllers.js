@@ -70,12 +70,13 @@ let controller = {
            })
     },
     search: function(req,res){
-        let serchData= req.query.search
+        let searchData= req.query.search
         product.findAll({
-            where:[{name_: {[op.like]:`${serchData}`}}],
+            where:[{name_: {[op.like]:`%${searchData}%`}}],
          // que onda esto ?   where:[{type_id: {[op.like]:`${serchData}`}}] 
         })
-        .then((resultados)=> res.render(`search-results`,{resultados}))
+        
+        .then((resultados)=>res.render(`search-results`,{resultados}))
         .catch((err)=>`Error:${err}`)
     },
     borrar: (req, res)=>{
@@ -100,7 +101,7 @@ let controller = {
 
     update: function(req,res){
         let primaryKey=req.params.id
-        let productUpdate=req.body
+        let productUpdate= req.body
             product.update(
                 productUpdate,
                 {where:{

@@ -50,7 +50,7 @@
 	
 			<ul class="right-navbar">
 					<% if(locals.user){%>
-					<li> <a href="/miPerfil" > <%=user.username%> </a></li>
+					<li> <a href="/miPerfil/ <%=user.id%>" > <%=user.username%> </a></li>
 					<li >
 						<form action="/logout" method="POST">
 							
