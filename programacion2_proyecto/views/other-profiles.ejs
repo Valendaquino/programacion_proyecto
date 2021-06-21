@@ -1,14 +1,18 @@
 <%- include('./partials/headerLogueado') %>
 
+
+<% for(let i = 0 ; i<product.length; i++) {  %>
+
+
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/products/<%= user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/products/<%= product[i].user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= user.name_users %> 
+					<h1 class="main-title"><%= product[i].user.name_users %> 
 						
 		
 					</h1>
@@ -33,19 +37,19 @@
 				<div class="separadores"><h2>Mis productos</h2> </div>
 			</div>
 			<!-- Show mis productos -->
-			<% for(let i = 0 ; i<producto.length; i++) {  %> 
+			
 
 				<!-- Show the "ultimos" products -->
 				
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/producto/<%=producto[i].id %> ">
+						<a href="/producto/<%=product[i].id %> ">
 							<figure class="product-box_image">
-								<img class= "img-producto" src="<%=producto[i].url_img %> " alt="<%=producto[i].name_ %>">
+								<img class= "img-producto" src="/images/products/ <%=product[i].url_image %>" alt="<%=product[i].name_ %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%=producto[i].name_ %></h2>
-								<p><%=producto[i].description%></p>
+								<h2><%=product[i].name_ %></h2>
+								<p><%=product[i].description%></p>
 							
 							</article>
 						</a>

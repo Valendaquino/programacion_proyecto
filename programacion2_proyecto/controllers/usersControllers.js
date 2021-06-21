@@ -167,10 +167,18 @@ let controller = {
         
     },
     otherProfile: function(req,res){
-        let primaryKey=req.params.id
-        users.findByPk(primaryKey)
-        .then(user=>
-            res.render('other-profiles', { user })
+        let user_id=req.params.id
+        product.findAll({
+            include: [ {association:'user'}, {association:'genre'}],
+            where:[ 
+           {user_id: {[op.like]:`%${user_id}%`} }
+          
+        ]})
+       
+        
+        .then(product=>
+           //res.render('other-profiles', { product })
+           res.send(product)
             )
         .catch(err => console.log(err))
     },
