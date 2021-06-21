@@ -6,7 +6,7 @@
 					<div class="col-12">
 						<h2 class="products-title">Resultado de Busqueda</h2>
 					</div>
-					<% for(let i = 0 ; i=resultados.length; i++) {  %> 
+					<% for(let i = 0 ; i<resultados.length; i++) {  %> 
 		
 					<!-- Show the "ultimos" products -->
 					
@@ -14,11 +14,11 @@
 						<section class="product-box">
 							<a href="/producto/<%=resultados[i].id %> ">
 								<figure class="product-box_image">
-									<img class= "img-producto" src="<%=resultados[i].imagen %> " alt="<%=resultados[i].nombre%>">
+									<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_ %>">
 								</figure>
 								<article class="product-box_data">
-									<h2><%=resultados[i].nombre%></h2>
-									<p><%=resultados[i].descripcion%></p>
+									<h2><%=resultados[i].name_ %></h2>
+									<p><%=resultados[i].description%></p>
 									
 								</article>
 							</a>

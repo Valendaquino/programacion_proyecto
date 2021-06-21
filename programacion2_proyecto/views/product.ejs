@@ -12,19 +12,20 @@
 			
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src=" /images/products/<%= producto.url_image %> " alt="" class="product-detail-img">
-					<h3 class="product-detail-description"> Publicacion de <%= producto.user_id %> </h3>
+					<h3 class="product-detail-description"> Publicacion de <a href="/prof<%= producto.user.username%> "> <%= producto.user.username%> </a></h3>
 					<p class="product-detail-description"><%= producto.description %> </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% let comments = producto.comments %> 
+						
 						<% for (let i=0; i<comments.length; i++){ %>
-
+							
 						<article>
-							<img class= "img-producto" src="/images/users/<%=comments[i].url_image %> " alt="<%=comments[i].user_id%>">
+							<img class= "img-producto" src="/images/products/<%=comments[i].user.profile_photo %> " alt="<%=comments[i].user.username%>">
 							<div class="data">
 								
-								<strong class="user" > <a href="/miPerfil"> <%= comments[i].user_id%> </a> </strong>
+								<strong class="user" > <a href="/perfilUsuarios/<%= comments[i].user.id%> "> <%= comments[i].user.username%> </a> </strong>
 								<p>
 								<%= comments[i].text_ %>
 								</p>

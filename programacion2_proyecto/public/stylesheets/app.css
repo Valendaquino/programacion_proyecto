@@ -611,17 +611,19 @@ textarea.form-input {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
   
   
 
 
   .left-navbar a,
-  .right-navbar a {
+  .right-navbar a,
+  .right-navbar button{
     border-bottom: none;
   }
 
+  
   .left-navbar a:hover,
   .right-navbar a:hover {
     color: var(--light-blue);

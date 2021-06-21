@@ -24,6 +24,7 @@ let controller = {
     almacenar: function(req,res){
        
         let errors = {};
+        console.log(req);
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
             errors.register = "El nombre no puede estar vacio"
@@ -35,17 +36,18 @@ let controller = {
             res.locals.errors = errors
             return res.render('product-add')
              } else {
+                console.log(req.file.filename);
                 let product = {
                     name_: req.body.name,
-                    publish_date: req.body.publish_date,
                     description: req.body.description,
-                    url_image: req.body.filename,
-                    genre_id:req.body.genre_id
+                    url_image: req.file.filename,
+                    genre_id: req.body.genre_id,
+                    user_id: 13
                    
                 } 
                 db.Product.create(product)
         
-                .then(() => res.redirect('/product'))
+                .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
                 }
        
@@ -56,13 +58,11 @@ let controller = {
        
     let primaryKey= req.params.id
         product.findByPk(primaryKey, {
-            include: [ {association:'user'}, {association:'comments'}]
-
-            
+            include: [ {association:'user'}, {association:'comments', include:[{association:'user'}] }]
         })
         .then((producto)=> 
-        //res.send(producto)
-       res.render(`product`,{producto})
+            //res.send(producto)
+            res.render(`product`,{producto})
         )
         .catch((err)=>{
             res.send(err)
@@ -70,13 +70,18 @@ let controller = {
            })
     },
     search: function(req,res){
-        let serchData= req.query.search
+        let searchData= req.query.search
         product.findAll({
-            where:[{name_: {[op.like]:`${serchData}`}}],
-         // que onda esto ?   where:[{type_id: {[op.like]:`${serchData}`}}] 
+            include: [ {association:'user'}, {association:'genre'}],
+            where:[
+                {name_: {[op.like]:`%${searchData}%`} }
+               //{genre: {[op.like]:`%${searchData}%`} }
+            ]
         })
-        .then((resultados)=> res.render(`search-results`,{resultados}))
+        
+        .then((resultados)=>res.render(`search-results`,{resultados}))
         .catch((err)=>`Error:${err}`)
+    
     },
     borrar: (req, res)=>{
         let primaryKey = req.params.id;
@@ -85,7 +90,7 @@ let controller = {
                 id: primaryKey
             }
         })
-        .then(()=> res.redirect('/product'))
+        .then(()=> res.redirect('/'))
         .catch(err=> console.log(err))
     },
     edit:  function(req,res){
@@ -93,14 +98,15 @@ let controller = {
         product.findByPk(primaryKey, {
             include: [{association:'genre'}, {association:'user'}]
         })
-        .then(resultados => res.render('product-edit', { resultados }))
+        .then(resultados => 
+            res.render('product-edit', { resultados }))
         .catch(err => console.log(err))
     
    }, 
 
     update: function(req,res){
         let primaryKey=req.params.id
-        let productUpdate=req.body
+        let productUpdate= req.body
             product.update(
                 productUpdate,
                 {where:{

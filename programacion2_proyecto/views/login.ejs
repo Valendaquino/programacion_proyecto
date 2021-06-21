@@ -5,6 +5,9 @@
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
+			<% if(locals.errors){ %>
+				<p class="alert" > <%= errors.login %><p>
+			<% } %>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 			</h2>
