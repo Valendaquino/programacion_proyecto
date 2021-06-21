@@ -7,7 +7,9 @@
 				<h2 class="products-title">Agregar productos</h2> 
 				
 			</div>
-			
+			<% if(locals.errors){ %>
+				<p class="alert" > <%= errors.login %><p>
+			<% } %>
 			<!-- Show the "ultimos" products -->
 			<div class="form">
 				<form action="/agregarProducto" method="POST" enctype="multipart/form-data">
@@ -15,12 +17,8 @@
 					<label for="" class="form-label">Nombre del producto</label>
 					<input type="text" class="form-input" placeholder="Insertar nombre" name="name">
 
-					<label  class="form-label" for="start">Fecha de Creacion</label>
-					<input  class="form-input" type="date" id="start" name="fecha"
-       				value="2018-07-22" min="1970-01-01" max="2021-12-31">
-
-					<label for="" class="form-label">Agrega tu descripcion del producto</label>
-					<p><textarea name="description"  class="form-input" rows="5" cols="50">Escribe aquí tu descripción: </textarea></p>
+					<label for="" class="form-label">Agrega una descripción del producto</label>
+					<p><textarea name="description"  class="form-input" rows="5" cols="50"> </textarea></p>
 					
 					<label class="form-label">Inserta imagen de tu producto</label>
 					<input type="file" class="form-input" name="img">

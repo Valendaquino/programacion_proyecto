@@ -50,15 +50,14 @@
 	
 			<ul class="right-navbar">
 					<% if(locals.user){%>
-					<li> <a href="/miPerfil/ <%=user.id%>" > <%=user.username%> </a></li>
+					<li> <a href="/miPerfil/ <%=user.id%>" > ¡Hola <%=user.name_users%>! </a></li>
 					<li >
 						<form action="/logout" method="POST">
 							
-							<button class="fas fa-sign-in-alt" type="submit"> Cerrar sesion</button>
+							<button class="far fa-address-card" type="submit"> Cerrar sesion</button>
 						</form>
 						</li>
-					<% }
-					else{ %> 
+					<% } else{ %> 
 					<li>
 						<a href="/creaTuCuenta">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>

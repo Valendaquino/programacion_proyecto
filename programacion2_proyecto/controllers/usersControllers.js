@@ -152,6 +152,7 @@ let controller = {
 
 
    perfil: function(req,res){
+      
         let user_id = req.params.id
            product.findAll({
             where:[{user_id: {[op.like]:`${user_id}`}}]
