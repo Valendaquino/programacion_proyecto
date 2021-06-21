@@ -66,15 +66,19 @@ let controller = {
             console.log(err);
            })
     },
-    search: function(req,res){
+    search: search: function(req,res){
         let searchData= req.query.search
         product.findAll({
-            where:[{name_: {[op.like]:`%${searchData}%`}}],
-         // que onda esto ?   where:[{type_id: {[op.like]:`${serchData}`}}] 
+            include: [ {association:'user'}, {association:'genre'}],
+            where:[
+                {name_: {[op.like]:`%${searchData}%`} },
+                // {genre: {[op.like]:`%${searchData}%`} }
+            ]
         })
         
         .then((resultados)=>res.render(`search-results`,{resultados}))
         .catch((err)=>`Error:${err}`)
+    
     },
     borrar: (req, res)=>{
         let primaryKey = req.params.id;
