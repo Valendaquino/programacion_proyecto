@@ -66,7 +66,7 @@ let controller = {
             console.log(err);
            })
     },
-    search: search: function(req,res){
+    search: function(req,res){
         let searchData= req.query.search
         product.findAll({
             include: [ {association:'user'}, {association:'genre'}],
