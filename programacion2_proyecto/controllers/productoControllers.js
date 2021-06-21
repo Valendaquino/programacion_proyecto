@@ -24,6 +24,7 @@ let controller = {
     almacenar: function(req,res){
        
         let errors = {};
+        console.log(req);
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
             errors.register = "El nombre no puede estar vacio"
@@ -35,16 +36,18 @@ let controller = {
             res.locals.errors = errors
             return res.render('product-add')
              } else {
+                console.log(req.file.filename);
                 let product = {
                     name_: req.body.name,
                     description: req.body.description,
-                    url_image: req.body.filename,
-                    genre_id:req.body.genre_id
+                    url_image: req.file.filename,
+                    genre_id: req.body.genre_id,
+                    user_id: 13
                    
                 } 
                 db.Product.create(product)
         
-                .then(() => res.redirect('/product'))
+                .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
                 }
        
@@ -71,8 +74,8 @@ let controller = {
         product.findAll({
             include: [ {association:'user'}, {association:'genre'}],
             where:[
-                {name_: {[op.like]:`%${searchData}%`} },
-                // {genre: {[op.like]:`%${searchData}%`} }
+                {name_: {[op.like]:`%${searchData}%`} }
+               //{genre: {[op.like]:`%${searchData}%`} }
             ]
         })
         

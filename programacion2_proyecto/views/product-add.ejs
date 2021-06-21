@@ -21,11 +21,11 @@
 					<p><textarea name="description"  class="form-input" rows="5" cols="50"> </textarea></p>
 					
 					<label class="form-label">Inserta imagen de tu producto</label>
-					<input type="file" class="form-input" name="img">
+					<input type="file" class="form-input" name="url_image">
 					
 					<div class="mb-3" class="form-label">
 						<label class="form-label"> Genero</label>
-						<select name="form-control" name="genre_id" id="">
+						<select class="form-control" name="genre_id" id="">
 							<% for (let i=0; i<genres.length; i++){ %>
 								<option value="<%= genres[i].id%>">
 									<%= genres[i].name%>

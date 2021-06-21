@@ -97,8 +97,7 @@ let controller = {
                      username: req.body.usuario,
                      profile_photo: "default-image.png",
                      password_: bcrypt.hashSync(req.body.password, 10),
-                     confirm_password: bcrypt.hashSync(req.body.repassword, 10)
-                     
+                     confirm_password: bcrypt.hashSync(req.body.repassword, 10)   
                  }
                  users.create(user)
                      .then( user => {
@@ -167,6 +166,14 @@ let controller = {
         })
         
     },
+    otherProfile: function(req,res){
+        let primaryKey=req.params.id
+        users.findByPk(primaryKey)
+        .then(user=>
+            res.render('other-profiles', { user })
+            )
+        .catch(err => console.log(err))
+    },
    edit: function(req,res){
         let primaryKey=req.params.id
         users.findByPk(primaryKey)
@@ -178,8 +185,8 @@ let controller = {
    },
    update:function(req,res){
         let primaryKey=req.params.id
-            let userUpdate=req.body
-           //No anda el update
+        let userUpdate=req.body
+        console.log(userUpdate);
                 users.update(
                     userUpdate,
                     {where:{
