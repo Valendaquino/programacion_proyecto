@@ -167,19 +167,19 @@ let controller = {
         
     },
     otherProfile: function(req,res){
-        let user_id=req.params.id
+        let user_id = req.params.id
         product.findAll({
-            include: [ {association:'user'}, {association:'genre'}],
+            include: [ {association:'user'}, {association:'genre'}, {association:'comment'} ],
             where:[ 
            {user_id: {[op.like]:`%${user_id}%`} }
+
+           
           
         ]})
-       
-        
         .then(product=>
-           //res.render('other-profiles', { product })
-           res.send(product)
-            )
+           res.render('other-profiles', { product })
+          // res.send(product)
+           )
         .catch(err => console.log(err))
     },
    edit: function(req,res){

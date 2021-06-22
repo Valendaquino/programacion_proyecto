@@ -45,16 +45,41 @@
 					<section class="product-box">
 						<a href="/producto/<%=product[i].id %> ">
 							<figure class="product-box_image">
-								<img class= "img-producto" src="/images/products/ <%=product[i].url_image %>" alt="<%=product[i].name_ %>">
+								<img class= "img-producto" src="/images/products/<%=product[i].url_image %> " alt="<%=product[i].name_ %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%=product[i].name_ %></h2>
 								<p><%=product[i].description%></p>
-							
+								
 							</article>
 						</a>
 					</section>
 				</div>
+
+
+				<div class="col-12">
+					<div class="separadores"><h2>Mis reseñas</h2> </div>
+				</div>
+				<!-- Show mis productos -->
+				
+	
+					<!-- Show the "ultimos" products -->
+					
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/producto/<%=product[i].id %> ">
+								<figure class="product-box_image">
+									<img class= "img-producto" src="/images/products/<%=product[i].url_image %> " alt="<%=product[i].name_ %>">
+								</figure>
+								<article class="product-box_data">
+									<h2><%=product[i].name_ %></h2>
+									<p><%=product[i].description%></p>
+									
+								</article>
+							</a>
+						</section>
+					</div>
+					
 				   <%  } %> 
 		</div>
 		</div>
