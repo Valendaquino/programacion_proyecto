@@ -46,13 +46,13 @@ CREATE TABLE comments(
 );
 
 
-INSERT INTO users VALUES (default, 'Martina', 'Stoessel','tinistoessel_', '1997/03/29',  'tinistoessel@gmail.com', 'hola123','hola123','milkBlush.jpg', '2021/02/12', '2021/02/12');
-INSERT INTO users VALUES (default, 'Carla', 'Roca','carla.rocaa', '1999/04/09',  'carlita.roca@hotmail.com', 'abc234','abc234', 'milkBlush.jpg','2021/02/12', '2021/02/12');
-INSERT INTO users VALUES (default, 'Valeria', 'Gonzales', 'valegonzales__', '1987/02/15',  'valuncha_loca@gmail.com', '15febrero','15febrero','milkBlush.jpg', '2021/02/12', '2021/02/12');
-INSERT INTO users VALUES (default, 'Sofia', 'Rimolo', 'sofa_rimolo', '2001/09/13',  'sofitarimolo@yahoo.com', 'sofa789','sofa789', 'milkBlush.jpg','2021/02/12', '2021/02/12');
-INSERT INTO users VALUES (default, 'Santiago', 'Salado', 'tot.salado', '1998/06/11',  'totosalado@yahoo.com', 'totito145','totito145', 'milkBlush.jpg', '2021/02/12', '2021/02/12');
-INSERT INTO users VALUES (default, 'Rocio', 'fagalde', 'rocifagalde', '2003/02/02',  'roci_fag@yahoo.com', 'holamanola','holamanola', 'milkBlush.jpg','2021/02/12' ,'2021/02/12');
-INSERT INTO users VALUES (default, 'Jose', 'Garcia', 'josecito_makeup', '2001/09/13',  'josecito123@yahoo.com', 'helloworld2','helloworld2','milkBlush.jpg', '2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Martina', 'Stoessel','tinistoessel_', '1997/03/29',  'tinistoessel@gmail.com', 'hola123','hola123','tini.png', '2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Carla', 'Roca','carla.rocaa', '1999/04/09',  'carlita.roca@hotmail.com', 'abc234','abc234', 'user1.jpg','2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Valeria', 'Gonzales', 'valegonzales__', '1987/02/15',  'valuncha_loca@gmail.com', '15febrero','15febrero','user2.jpg', '2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Sofia', 'Rimolo', 'sofa_rimolo', '2001/09/13',  'sofitarimolo@yahoo.com', 'sofa789','sofa789', 'user3.jpg','2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Santiago', 'Salado', 'tot.salado', '1998/06/11',  'totosalado@yahoo.com', 'totito145','totito145', 'user5.jpg', '2021/02/12', '2021/02/12');
+INSERT INTO users VALUES (default, 'Rocio', 'fagalde', 'rocifagalde', '2003/02/02',  'roci_fag@yahoo.com', 'holamanola','holamanola', 'rocifag.jpeg','2021/02/12' ,'2021/02/12');
+INSERT INTO users VALUES (default, 'Jose', 'Garcia', 'josecito_makeup', '2001/09/13',  'josecito123@yahoo.com', 'helloworld2','helloworld2','josesito.png', '2021/02/12', '2021/02/12');
 
 INSERT INTO genres VALUES (default, 'Mascaras y Delineadores');
 INSERT INTO genres VALUES (default, 'Bronzers');

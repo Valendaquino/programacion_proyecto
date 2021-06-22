@@ -95,7 +95,7 @@ let controller = {
                      birth_date: req.body.nacimiento, 
                      email: req.body.email,
                      username: req.body.usuario,
-                     profile_photo: "default-image.png",
+                     profile_photo: "default.png",
                      password_: bcrypt.hashSync(req.body.password, 10),
                      confirm_password: bcrypt.hashSync(req.body.repassword, 10)   
                  }
@@ -169,7 +169,7 @@ let controller = {
     otherProfile: function(req,res){
         let user_id = req.params.id
         product.findAll({
-            include: [ {association:'user'}, {association:'genre'}, {association:'comment'} ],
+            include: [ {association:'user'}, {association:'genre'}, ],
             where:[ 
            {user_id: {[op.like]:`%${user_id}%`} }
 
@@ -178,7 +178,7 @@ let controller = {
         ]})
         .then(product=>
            res.render('other-profiles', { product })
-          // res.send(product)
+           //res.send(product)
            )
         .catch(err => console.log(err))
     },

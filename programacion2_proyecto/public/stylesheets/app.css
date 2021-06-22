@@ -191,7 +191,18 @@ hr {
   margin: auto;
 }
 
+/*====== perfilusuarios ======*/
+.caracteristicasperfil{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 30px;
+  margin-left: 10px;
+  font-size: small;
+  background-color:lightpink
 
+
+}
 /*====== Products ======*/
 .products-wrapper {
   margin-top: 30px;
@@ -530,6 +541,10 @@ hr {
     font-size: 30px;
     background-color:black;
   
+}
+.separador{
+  display:flex;
+  background-color:black;
 }
 
 .error{
