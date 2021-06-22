@@ -50,7 +50,7 @@ let controller = {
             return res.render('register')
 
         }
-        //foto de perfil
+       
         else if (req.body.password == ""){ 
             errors.register = "Password no puede estar vacia"
             res.locals.errors = errors
@@ -200,6 +200,7 @@ let controller = {
                     {where:{
                         id: primaryKey
                     } } )
+                    //no cambia la img
                 .then(()=> res.redirect('/'))
                 .catch(err => console.log(err))
     },

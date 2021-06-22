@@ -6,10 +6,13 @@
 					<div class="col-12">
 						<h2 class="products-title">Resultado de Busqueda</h2>
 					</div>
-					<% for(let i = 0 ; i<resultados.length; i++) {  %> 
+					
 		
 					<!-- Show the "ultimos" products -->
-					
+					<% if(resultados == ""){  %> 
+						<h3>No hay resultados para su criterio de búsqueda</h3>
+					<%} else{ %> 
+						<% for(let i = 0 ; i<resultados.length; i++) {  %> 
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href="/producto/<%=resultados[i].id %> ">
@@ -18,13 +21,14 @@
 								</figure>
 								<article class="product-box_data">
 									<h2><%=resultados[i].name_ %></h2>
+									<h4><a href="/perfilUsuarios/<%=resultados[i].user.id%>"> @<%=resultados[i].user.username%></a></h4>
 									<p><%=resultados[i].description%></p>
 									
 								</article>
 							</a>
 						</section>
 					</div>
-					   <%  } %> 
+					   <%  }} %> 
 				</div> 
 			</div>
 

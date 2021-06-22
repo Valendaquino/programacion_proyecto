@@ -34,10 +34,13 @@
 						</figure>
 						<article class="product-box_data">
 							<h2><%=resultados[i].name_ %></h2>
-							<h4> Por:<%=resultados[i].user.name_users%></h4>
-							<p><%=resultados[i].description%></p>
-							
+							<section>
+								<!-- Ver si hay que validar si el usuario esta logueado-->
+								<h4><a href="/perfilUsuarios/<%=resultados[i].user.id%>"> @<%=resultados[i].user.username%></a></h4>
+								<p><%=resultados[i].description%></p>
+							</section>
 						</article>
+						
 					</a>
 				</section>
 			</div>

@@ -42,7 +42,7 @@ let controller = {
                     description: req.body.description,
                     url_image: req.file.filename,
                     genre_id: req.body.genre_id,
-                    user_id: 13
+                    user_id: res.locals.user.id
                    
                 } 
                 db.Product.create(product)
@@ -58,7 +58,11 @@ let controller = {
        
     let primaryKey= req.params.id
         product.findByPk(primaryKey, {
-            include: [ {association:'user'}, {association:'comments', include:[{association:'user'}] }]
+            include: [ {association:'user'}, 
+                        {association:'comments', 
+                            include:[{association:'user'}],
+               //             order:[['updated_at','DESC']]  No anda
+                    }]
         })
         .then((producto)=> 
             //res.send(producto)
@@ -69,14 +73,32 @@ let controller = {
             console.log(err);
            })
     },
+    comments: function(req,res){
+      
+        if(req.session.user == undefined){
+            return res.redirect('/ingresa')
+        } else {
+         
+            let comment={
+                text_ : req.body.comment,
+                user_id: res.locals.user.id,
+                product_id: 4
+            }
+            db.Comment.create(comment)
+            .then(() => res.redirect('/'))
+            .catch(err => console.log(err))
+        }
+    },
     search: function(req,res){
         let searchData= req.query.search
         product.findAll({
             include: [ {association:'user'}, {association:'genre'}],
-            where:[
-                {name_: {[op.like]:`%${searchData}%`} }
-               //{genre: {[op.like]:`%${searchData}%`} }
-            ]
+            where:{ [op.or]:[
+                {description: {[op.like]:`%${searchData}%`}},
+                {name_: {[op.like]:`%${searchData}%`}}
+             ]
+             }
+           
         })
         
         .then((resultados)=>res.render(`search-results`,{resultados}))
@@ -107,12 +129,24 @@ let controller = {
     update: function(req,res){
         let primaryKey=req.params.id
         let productUpdate= req.body
+        let img=req.file.filename
             product.update(
                 productUpdate,
                 {where:{
                     id: primaryKey
-                } } )
-            .then(()=> res.redirect('/product'))
+                } }
+                
+                )
+                //funciona solo li le enviamos una img pero no la cambia en la base            
+            .then(()=> 
+                    product.update(
+                        img,
+                        {where:{
+                            id: primaryKey
+                        } } 
+                    )
+                .then(()=>res.redirect('/')))
+                .catch(err => console.log(err))
             .catch(err => console.log(err))
     }
 }

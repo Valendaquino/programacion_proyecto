@@ -19,10 +19,11 @@ router.get('/', controller.index);
 router.get('/agregarProducto', controller.add);
 router.post('/agregarProducto', upload.single('url_image') ,controller.almacenar);
 router.get('/producto/:id', controller.producto);
+router.post('/producto/:id', controller.comments)
 router.get('/search', controller.search);
 router.get('/borrar/:id', controller.borrar);
 router.get('/editProduct/:id', controller.edit)
-router.post('/editProduct/:id', controller.update)
+router.post('/editProduct/:id',upload.single('url_image'), controller.update)
 
 
 module.exports = router;

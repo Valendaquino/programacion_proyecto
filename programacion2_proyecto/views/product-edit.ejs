@@ -14,19 +14,17 @@
 				
 			
 			<div class="formulario">
-				<form action="/producto/edit/<%=resultados.id%>" method="POST">
+				<form action="/editProduct/<%=resultados.id%>" method="POST" enctype="multipart/form-data" >
 					<label class="form-label" for="">Nombre:</label>
 					
-					<input class="form-input" name="nombre" value="<%=resultados.name_ %>"  type="text" >
+					<input class="form-input" name="name_" value="<%=resultados.name_ %>"  type="text" >
 	
 					<label class="form-label" for="">Descripcion:</label>
 					<textarea name="description" value="<%= resultados.description %>"   class="form-input" rows="5" cols="50"><%= resultados.description %></textarea>
 
 					<label for="" class="form-label">Inserta nueva imagen de tu producto</label>
-					<input type="file" class="form-input" name="img">
+					<input type="file" class="form-input" name="url_image" value="<%= resultados.url_image %>"  >
 
-					<label class="form-label" for="">Tipo de producto:</label> 
-					<input class="form-input" name="web" value="<%=resultados.genre.name%>"  type="text" >
 					
 					
 

@@ -31,6 +31,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         }
       
+      
 
     };
     let config = {

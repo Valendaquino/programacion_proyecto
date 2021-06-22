@@ -42,7 +42,8 @@ CREATE TABLE comments(
 	user_id INT UNSIGNED,
     product_id INT UNSIGNED,
 	FOREIGN KEY (user_id) REFERENCES users(id),
-	FOREIGN KEY (product_id) REFERENCES products(id)
+	FOREIGN KEY (product_id) REFERENCES products(id),
+    updated_at DATE
 );
 
 
@@ -78,98 +79,19 @@ INSERT INTO products VALUES (default, 'NAKED CHERRY', '2021/05/05', 'Paleta de 1
 
 
 
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,1);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 1);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 1);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 1);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/04/21', 5, 1);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 1);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 1);
+INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,1, '2021/01/03');
+INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 1, '2021/01/03');
+INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 1, '2021/01/03');
+INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 1,'2021/01/01');
+INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/04/21', 5, 1, '2021/01/01');
+INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 1, '2021/01/01');
+INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 1,'2021/01/01');
 
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,2);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 2);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 2);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 2);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/04/21', 5, 2);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 2);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 2);
+INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,2, '2021/01/01');
+INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 2, '2021/01/01');
+INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 2, '2021/01/01');
+INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 2, '2021/01/01');
+INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/04/21', 5, 2, '2021/01/01');
+INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 2, '2021/01/01');
+INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 2, '2021/01/01');
 
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,3);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 3);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 3);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 3);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/08/02', 5, 3);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/12/09', 6, 3);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 3);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,4);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 4);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 4);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 4);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/03/01', 5, 4);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 4);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 4);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,5);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 5);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 5);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 5);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/12/09', 5, 5);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 5);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 5);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,6);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 6);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 6);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 6);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/12/09', 5, 6);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 6);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 6);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,7);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 7);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 7);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 7);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/12/09', 5, 7);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 7);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 7);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,8);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.','2021/12/03', 2, 8);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.','2020/10/04', 3, 8);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.','2020/12/09', 4, 8);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/12/09', 5, 8);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 8);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7,8);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,9);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 9);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 9);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 9);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/12/09', 5, 9);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 9);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 9);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,10);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 10);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 10);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 10);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/11/09', 5, 10);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 10);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 10);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!','2021/01/03', 1,11);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 11);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 11);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 11);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/11/09', 5, 11);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 11);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22', 7, 11);
-
-INSERT INTO comments VALUES (default, 'Este producto los compré hace aproximadamente 1 mes. ¡De verdad que es fantastico!', '2021/01/03', 1,12);
-INSERT INTO comments VALUES (default, 'La verdad que hace tiempo buscaba un producto tan duradero y por fín lo encontre.', '2021/12/03', 2, 12);
-INSERT INTO comments VALUES (default, 'Si buscaban un producto duradero y bueno para tu piel, ni lo duden! La verdad que no paro de utilizarlo. Esta genial.', '2020/10/04', 3, 12);
-INSERT INTO comments VALUES (default, 'Me vino fallado, tengan mucho cuidado con lo que compran.', '2020/12/09', 4, 12);
-INSERT INTO comments VALUES (default, 'Increible el color que te deja. Más que recomendado!', '2020/11/09', 5, 12);
-INSERT INTO comments VALUES (default, 'Nunca tuve una peor experiencia!', '2020/08/02', 6, 12);
-INSERT INTO comments VALUES (default, '@rocifag, es mi producto estrella en mjis prroducciones, te recomiendo que veas mis tutoriales y aprendas a utilizarlo.', '2020/07/22',7, 12);
