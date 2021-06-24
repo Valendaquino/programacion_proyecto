@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes)=>{
            
         },
         product_id: {
-            type: dataTypes.DATE,
+            type: dataTypes.INTEGER,
             
         }
         

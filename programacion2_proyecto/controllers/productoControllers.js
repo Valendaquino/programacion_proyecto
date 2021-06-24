@@ -55,42 +55,59 @@ let controller = {
        
     },
 
-   
     producto: function(req,res){
-    let primaryKey= req.params.id
-        product.findByPk(primaryKey, {
-            include: [ {association:'user'}, 
-                        {association:'comments', 
-                            include:[{association:'user'}],
-               //             order:[['updated_at','DESC']]  No anda
-                    }]
-        })
-        .then((producto)=> 
-            //res.send(producto)
-            
-            res.render(`product`,{producto})
-        )
-        .catch((err)=>{
-            res.send(err)
-            console.log(err);
-           })
-    },
-    comments: function(req,res){
-      
-        if(req.session.user == undefined){
-            return res.redirect('/ingresa')
-        } else {
-         
-            let comment={
-                text_ : req.body.comment,
-                user_id: res.locals.user.id,
-                product_id: 4
+        let primaryKey= req.params.id
+        
+            product.findByPk(primaryKey, {
+                include: [ {association:'user'},
+            ]})
+           
+            .then((producto)=> 
+          
+                comment.findAll({
+                   where: {
+                        product_id: primaryKey
+                    }
+                //    include:[{association:'user'},
+                //    {association:'product'},
+                // ],
+                //     order:[['updated_at','DESC']] ,
+                 })
+                
+                .then ((comments)=>{
+                   
+                res.send(producto, comments)
+                    //return res.render('product', {producto, comments})
+               }
+                
+               ) 
+                .catch((err)=>{
+                    res.send(err)
+                    console.log(err);
+                   })
+            )
+            .catch((err)=>{
+                res.send(err)
+                console.log(err);
+               })
+        },
+        comments: function(req,res){
+          
+            if(req.session.user == undefined){
+                return res.redirect('/ingresa')
+            } else {
+             
+                let comment={
+                    text_ : req.body.comment,
+                    user_id: req.session.user.id,
+                    product_id: req.params.id
+                }
+                db.Comment.create(comment)
+    
+                .then(() => res.redirect('/'))
+                .catch(err => console.log(err))
             }
-            db.Comment.create(comment)
-            .then(() => res.redirect('/'))
-            .catch(err => console.log(err))
-        }
-    },
+ },
     search: function(req,res){
         let searchData= req.query.search
         product.findAll({
@@ -141,10 +158,6 @@ let controller = {
         .then(()=> res.redirect('/'))
         .catch(err => console.log(err))
 },
-
-   
-
-
 
   
 }
