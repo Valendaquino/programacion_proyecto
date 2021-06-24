@@ -33,7 +33,7 @@ app.use(session( { secret: "Secretito",
 
 app.use((req,res,next)=>{
   if(req.session.user != undefined){
-    res.locals.user = req.session.user
+    res.locals = req.session.user
     
 }
 return next()
@@ -45,7 +45,7 @@ app.use((req, res, next)=> {
     db.User.findByPk(req.cookies.userId)
     .then(user =>{
       req.session.user = user
-      res.locals = user
+      res.locals = req.session.user
     })
     .catch (error => console.log(error))
   }

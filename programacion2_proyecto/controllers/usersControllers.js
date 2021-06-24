@@ -50,6 +50,11 @@ let controller = {
             return res.render('register')
 
         }
+        else if (req.body.password.length <4){ 
+            errors.register = "Password debe tener mas de 3 caracteres"
+            res.locals.errors = errors
+            return res.render('register')
+        } 
        
         else if (req.body.password == ""){ 
             errors.register = "Password no puede estar vacia"

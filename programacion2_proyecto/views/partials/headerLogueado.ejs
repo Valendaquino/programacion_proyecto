@@ -44,19 +44,20 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los productos</a></li>
-					<li><a href="/agregarProducto">Agregar Producto</a></li>
+					
 					
 				</ul>
 	
 			<ul class="right-navbar">
-					<% if(locals.user){%>
-					<li> <a href="/miPerfil/ <%=user.id%>" > ¡Hola <%=user.name_users%>! </a></li>
+					<% if(locals.id){%>
+					<li> <a href="/miPerfil/<%=locals.id%>" > ¡Hola <%=locals.name_users%>! </a></li>
+					<li><a href="/agregarProducto">Agregar Producto</a></li>
 					<li >
 						<form action="/logout" method="POST">
 							
 							<button class="far fa-address-card" type="submit"> Cerrar sesion</button>
 						</form>
-						</li>
+					</li>
 					<% } else{ %> 
 					<li>
 						<a href="/creaTuCuenta">Creá tu cuenta <i class="far fa-address-card"></i>

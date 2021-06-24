@@ -48,64 +48,7 @@
 		</div> 
 	</div>
 	<!-- /Novedades -->
-	<!-- Más comentados -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<div></div>
-				<div class="separadores"><h2 class="product-tittle">Mas comentados</h2></div>
-			</div>
-			<% for(let i = 0 ; resultados.length<8 ; i++) {  %> 
-
-			<!-- Show the "ultimos" products -->
-			
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto/<%=resultados[i].id %> ">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %> " alt="<%=resultados[i].name_%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=resultados[i].name_%></h2>
-							<p><%=resultados[i].description%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			   <%  } %> 
-		</div>  
-	</div>
-	<!-- /Más comentados -->
-
-	<!-- /Mejor Puntuados -->
-
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<div class="separadores"><h2 class="product-tittle">Mejores puntuados</h2></div>
-			</div>
-			<% for(let i = 0 ; resultados.length<8; i++) {  %> 
-
-			<!-- Show the "ultimos" products -->
-			
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/producto/<%=resultados[i].id %> ">
-						<figure class="product-box_image">
-							<img class= "img-producto" src="/images/products/<%=resultados[i].url_image %>" alt="<%=resultados[i].name_ %>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=resultados[i].name_ %></h2>
-							<p><%=resultados[i].description%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<%  } %> 
-		</div> 
-	</div>
+	
 
 	<!-- /Mejor Puntuados -->
 	
