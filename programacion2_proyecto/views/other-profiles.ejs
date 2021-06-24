@@ -22,10 +22,18 @@
 				</div>
 				<hr class="separador">
 				<div class="d-flex align-items-center">
-					
-						<h3 class=" caracteristicasperfil" >Comentarios relizados</h3>
-						<h3 class="caracteristicasperfil">Seguidores</h3>
-						<h3 class="caracteristicasperfil">Publicaciones</h3>
+					<div class="cajita">
+						<h2 class="infop"><%= %></h2>
+						<h3 class="">Comentarios relizados </h3>
+
+						
+					</div>
+						
+					<div class="cajita">
+						<h2 class="infop"> <%= product[i].length %></h2>
+							<h3 class="">Publicaciones</h3>
+					</div>
+						
 					
 				</div>
 			</div>
@@ -39,9 +47,11 @@
 			<div class="col-12">
 				<div class="separadores"><h2>Mis productos</h2> </div>
 			</div>
+			<%  } %> 
+
 			<!-- Show mis productos -->
 			
-
+			<% for(let i = 0 ; i<product.length; i++) {  %>
 				<!-- Show the "ultimos" products -->
 				
 				<div class="col-12 col-sm-6 col-lg-3">
