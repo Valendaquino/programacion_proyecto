@@ -13,14 +13,8 @@ let controller = {
        order:[[`created_at`,`DESC`]]
        
       })
-      .then((resultados)=>
-       //res.send(resultados)
-        res.render(`index`,{resultados})
-      )
-      .catch((err)=>{
-         res.send(err)
-         console.log(err);
-        })
+      .then(resultados=> res.render('index',{resultados}))
+      .catch(err=> `Error: ${err}`)
       } 
 }
 module.exports = controller;

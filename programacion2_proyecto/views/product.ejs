@@ -3,9 +3,13 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= producto.name_ %> </h2> 
+			
+			<% if(locals.id == producto.user_id)  { %> 
+				
 			<p class="product-detail-description">
 				<a href="/editProduct/<%=producto.id %>">Editar</a>
 			</p>
+			<%  } %> 
 		</div>
 		<div class="product-detail">
 			<div class="row">

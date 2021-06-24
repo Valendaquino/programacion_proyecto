@@ -8,6 +8,8 @@ const op = db.Sequelize.Op;
 let controller = {
     index: function(req,res) {
         res.render('index', {'producto':producto})
+      
+
        },
     
     // agregarproducto: function(req,res){
@@ -42,7 +44,7 @@ let controller = {
                     description: req.body.description,
                     url_image: req.file.filename,
                     genre_id: req.body.genre_id,
-                    user_id: res.locals.user.id
+                    user_id: req.session.user.id
                    
                 } 
                 db.Product.create(product)
@@ -55,7 +57,6 @@ let controller = {
 
    
     producto: function(req,res){
-       
     let primaryKey= req.params.id
         product.findByPk(primaryKey, {
             include: [ {association:'user'}, 
@@ -66,6 +67,7 @@ let controller = {
         })
         .then((producto)=> 
             //res.send(producto)
+            
             res.render(`product`,{producto})
         )
         .catch((err)=>{
@@ -125,29 +127,25 @@ let controller = {
         .catch(err => console.log(err))
     
    }, 
+   update: (req, res)=>{   
+    let primaryKey = req.params.id;
+    let productoActualizar = req.body
+    product.update(
+        productoActualizar, 
+        {
+            where: {
+                id: primaryKey
+            }
+        }
+    )
+        .then(()=> res.redirect('/'))
+        .catch(err => console.log(err))
+},
 
-    update: function(req,res){
-        let primaryKey=req.params.id
-        let productUpdate= req.body
-        let img=req.file.filename
-            product.update(
-                productUpdate,
-                {where:{
-                    id: primaryKey
-                } }
-                
-                )
-                //funciona solo li le enviamos una img pero no la cambia en la base            
-            .then(()=> 
-                    product.update(
-                        img,
-                        {where:{
-                            id: primaryKey
-                        } } 
-                    )
-                .then(()=>res.redirect('/')))
-                .catch(err => console.log(err))
-            .catch(err => console.log(err))
-    }
+   
+
+
+
+  
 }
 module.exports = controller
