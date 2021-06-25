@@ -157,20 +157,29 @@ let controller = {
 
 
    perfil: function(req,res){
-      
-        let user_id = req.params.id
-        // ver si hacemos la validacion 
-           product.findAll({
-            where:[{user_id: {[op.like]:`${user_id}`}}]
+    let primaryKey = req.params.id
+        if(req.session.user == undefined){
+            res.redirect('/')
+        }else{
+            db.User.findByPk(primaryKey)
+            .then((user)=>{
+                db.Product.findAll({
+                    where: { user_id: user.id}
+                })
             })
-        .then((producto)=> 
+                .then((producto)=> 
+            
+                    res.render(`profile`,{user, producto})
+                    )
+                    .catch((err)=>{
+                        res.send(err)
+                        console.log(err);
+            })
+        }
+      
+       
+      
         
-          res.render(`profile`,{producto})
-        )
-        .catch((err)=>{
-            res.send(err)
-            console.log(err);
-        })
         
     },
     otherProfile:
