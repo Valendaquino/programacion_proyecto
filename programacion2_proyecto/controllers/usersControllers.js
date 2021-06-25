@@ -163,9 +163,7 @@ let controller = {
         }else{
             db.User.findByPk(primaryKey)
             .then((user)=>{
-                db.Product.findAll({
-                    where: { user_id: user.id}
-                })
+                // 
             })
                 .then((producto)=> 
             
