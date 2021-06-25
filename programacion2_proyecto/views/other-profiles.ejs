@@ -1,19 +1,16 @@
 <%- include('./partials/headerLogueado') %>
 
 
-<% for(let i = 0 ; i<product.user; i++) {  %>
-
-
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= product[i].user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= product[i].user.name_users %> 
+					<h1 class="main-title"><%= user.name_users %> 
 						
 		
 					</h1>
@@ -23,14 +20,14 @@
 				<hr class="separador">
 				<div class="d-flex align-items-center">
 					<div class="cajita">
-						<h2 class="infop"><%= %></h2>
+						<h2 class="infop"><%=  comments.length %></h2>
 						<h3 class="">Comentarios relizados </h3>
 
 						
 					</div>
 						
 					<div class="cajita">
-						<h2 class="infop"> <%= product[i].lenght %></h2>
+							<h2> <%= product.length %> </h2>
 							<h3 class="">Publicaciones</h3>
 					</div>
 						
@@ -39,11 +36,8 @@
 			</div>
 		</div>
 	</section>
-	<!-- /Datos del usuario -->
 
-	<!-- Mis productos -->
-	
-			<%  } %> 
+
 	<div class="container products-wrapper">
 		<div class="row">
 					<div class="col-12">

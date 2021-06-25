@@ -161,7 +161,7 @@ let controller = {
         let user_id = req.params.id
         // ver si hacemos la validacion 
            product.findAll({
-            where:[{user_id: {[op.like]:`${user_id}$`}}]
+            where:[{user_id: {[op.like]:`${user_id}`}}]
             })
         .then((producto)=> 
         
@@ -173,21 +173,113 @@ let controller = {
         })
         
     },
-    otherProfile: function(req,res){
+    otherProfile:
+    function(req,res){
+        let primaryKey= req.params.id
+        if (req.session.user!= undefined){
+
+        
+        if(req.session.user.id == primaryKey){
+            res.redirect( `/miPerfil/${req.session.user_id}`)
+            
+        }
+        else{
+
+            db.User.findByPk(primaryKey)
+           
+            .then((user)=> 
+          
+                product.findAll({
+                   where: {
+                        user_id: user.id
+                    },
+                    include:[{association:'user'},
+                     ],
+                    order:[['updated_at','DESC']] ,
+                 })
+                
+                .then ((product)=>{
+                    comment.findAll({
+                        where: {
+                             user_id: user.id
+                         },
+                         include:[{association:'user'},
+                          ],
+                         order:[['updated_at','DESC']] ,
+                      })
+                    .then((comments)=>{
+                        return res.render('other-profiles', {product, user,comments})
+                    })
+                 
+               }
+                
+               ) 
+                
+            )
+            .catch((err)=>{
+                res.send(err)
+                console.log(err);
+               })
+
+        }
+    }
+    
+        else {
+
+        
+
+            db.User.findByPk(primaryKey)
+           
+            .then((user)=> 
+          
+                product.findAll({
+                   where: {
+                        user_id: user.id
+                    },
+                    include:[{association:'user'},
+                     ],
+                    order:[['updated_at','DESC']] ,
+                 })
+                
+                .then ((product)=>{
+                    comment.findAll({
+                        where: {
+                             user_id: user.id
+                         },
+                         include:[{association:'user'},
+                          ],
+                         order:[['updated_at','DESC']] ,
+                      })
+                    .then((comments)=>{
+                        return res.render('other-profiles', {product, user,comments})
+                    })
+                 
+               }
+                
+               ) 
+                
+            )
+            .catch((err)=>{
+                res.send(err)
+                console.log(err);
+               })
+        }},
+    
+    //function(req,res){
         // hacer un if req.session.user != undefined, que me mande a profile 
-        let user_id = req.params.id
-        product.findAll({
-            include: [ {association:'user'}, {association:'genre'}, ],
-            where:[ 
-           {user_id: {[op.like]:`%${user_id}%`} }
+        //let user_id = req.params.id
+        //product.findAll({
+        //    include: [ {association:'user'}, {association:'genre'}, ],
+           // where:[ 
+           //{user_id: {[op.like]:`%${user_id}%`} }
 
            
           
-        ]})
+        //]})
         
-        .then(product=>res.render('other-profiles', { product }))
-        .catch(err => console.log(err))
-    },
+        //.then(product=>res.render('other-profiles', { product }))
+        //.catch(err => console.log(err))
+   // },
    edit: function(req,res){
         let primaryKey=req.params.id
         users.findByPk(primaryKey)
