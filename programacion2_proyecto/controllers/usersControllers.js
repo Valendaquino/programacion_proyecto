@@ -157,37 +157,138 @@ let controller = {
 
 
    perfil: function(req,res){
-      
-        let user_id = req.params.id
-           product.findAll({
-            where:[{user_id: {[op.like]:`${user_id}`}}]
+    let primaryKey = req.params.id
+        if(req.session.user == undefined){
+            res.redirect('/')
+        }else{
+            db.User.findByPk(primaryKey)
+            .then((user)=>{
+                db.Product.findAll({
+                    where: { user_id: user.id}
+                })
             })
-        .then((producto)=> 
+                .then((producto)=> 
+            
+                    res.render(`profile`,{user, producto})
+                    )
+                    .catch((err)=>{
+                        res.send(err)
+                        console.log(err);
+            })
+        }
+      
+       
+      
         
-          res.render(`profile`,{producto})
-        )
-        .catch((err)=>{
-            res.send(err)
-            console.log(err);
-        })
         
     },
-    otherProfile: function(req,res){
-        let user_id = req.params.id
-        product.findAll({
-            include: [ {association:'user'}, {association:'genre'}, ],
-            where:[ 
-           {user_id: {[op.like]:`%${user_id}%`} }
+    otherProfile:
+    function(req,res){
+        let primaryKey= req.params.id
+        if (req.session.user!= undefined){
+
+        
+        if(req.session.user.id == primaryKey){
+            res.redirect( `/miPerfil/${req.session.user_id}`)
+            
+        }
+        else{
+
+            db.User.findByPk(primaryKey)
+           
+            .then((user)=> 
+          
+                product.findAll({
+                   where: {
+                        user_id: user.id
+                    },
+                    include:[{association:'user'},
+                     ],
+                    order:[['updated_at','DESC']] ,
+                 })
+                
+                .then ((product)=>{
+                    comment.findAll({
+                        where: {
+                             user_id: user.id
+                         },
+                         include:[{association:'user'},
+                          ],
+                         order:[['updated_at','DESC']] ,
+                      })
+                    .then((comments)=>{
+                        return res.render('other-profiles', {product, user,comments})
+                    })
+                 
+               }
+                
+               ) 
+                
+            )
+            .catch((err)=>{
+                res.send(err)
+                console.log(err);
+               })
+
+        }
+    }
+    
+        else {
+
+        
+
+            db.User.findByPk(primaryKey)
+           
+            .then((user)=> 
+          
+                product.findAll({
+                   where: {
+                        user_id: user.id
+                    },
+                    include:[{association:'user'},
+                     ],
+                    order:[['updated_at','DESC']] ,
+                 })
+                
+                .then ((product)=>{
+                    comment.findAll({
+                        where: {
+                             user_id: user.id
+                         },
+                         include:[{association:'user'},
+                          ],
+                         order:[['updated_at','DESC']] ,
+                      })
+                    .then((comments)=>{
+                        return res.render('other-profiles', {product, user,comments})
+                    })
+                 
+               }
+                
+               ) 
+                
+            )
+            .catch((err)=>{
+                res.send(err)
+                console.log(err);
+               })
+        }},
+    
+    //function(req,res){
+        // hacer un if req.session.user != undefined, que me mande a profile 
+        //let user_id = req.params.id
+        //product.findAll({
+        //    include: [ {association:'user'}, {association:'genre'}, ],
+           // where:[ 
+           //{user_id: {[op.like]:`%${user_id}%`} }
 
            
           
-        ]})
-        .then(product=>
-           res.render('other-profiles', { product })
-           //res.send(product)
-           )
-        .catch(err => console.log(err))
-    },
+        //]})
+        
+        //.then(product=>res.render('other-profiles', { product }))
+        //.catch(err => console.log(err))
+   // },
    edit: function(req,res){
         let primaryKey=req.params.id
         users.findByPk(primaryKey)
@@ -198,17 +299,32 @@ let controller = {
         .catch(err => console.log(err))
    },
    update:function(req,res){
-        let primaryKey=req.params.id
-        let userUpdate=req.body
-        console.log(userUpdate);
-                users.update(
-                    userUpdate,
-                    {where:{
-                        id: primaryKey
-                    } } )
-                    //no cambia la img
-                .then(()=> res.redirect('/'))
-                .catch(err => console.log(err))
+    let primaryKey = req.params.id;
+    db.User.findByPk(primaryKey)
+    .then((users)=>{
+        if(req.session.user == undefined){
+            res.redirect("/")
+        }else{
+           let usuarioActualizar = { name_users: req.body.name_users,
+                                        surname: req.body.surname,
+                                        username: req.body.username,
+                                        profile_photo:  req.file.filename,
+                                        email: req.body.email,
+                                        }
+               console.log(usuarioActualizar);
+               db.User.update(
+               usuarioActualizar, 
+               {
+                   where: {
+                       id: primaryKey
+                   }
+               }
+               )
+               .then(()=> res.redirect('/'))
+                       }
+                   })
+   
+       .catch(err => console.log(err))
     },
     logout:(req,res)=>{
         req.session.destroy()
