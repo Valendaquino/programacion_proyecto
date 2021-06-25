@@ -1,7 +1,7 @@
 <%- include('./partials/headerLogueado') %>
 
 
-<% for(let i = 0 ; i<product.length; i++) {  %>
+<% for(let i = 0 ; i<product.user; i++) {  %>
 
 
 	<!-- Datos del usuario -->
@@ -30,7 +30,7 @@
 					</div>
 						
 					<div class="cajita">
-						<h2 class="infop"> <%= product[i].length %></h2>
+						<h2 class="infop"> <%= product[i].lenght %></h2>
 							<h3 class="">Publicaciones</h3>
 					</div>
 						
@@ -42,13 +42,13 @@
 	<!-- /Datos del usuario -->
 
 	<!-- Mis productos -->
+	
+			<%  } %> 
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<div class="separadores"><h2>Mis productos</h2> </div>
-			</div>
-			<%  } %> 
-
+					<div class="col-12">
+						<div class="separadores"><h2>Mis productos</h2> </div>
+					</div>
 			<!-- Show mis productos -->
 			
 			<% for(let i = 0 ; i<product.length; i++) {  %>
@@ -70,33 +70,11 @@
 				</div>
 
 
-				<div class="col-12">
-					<div class="separadores"><h2>Mis reseñas</h2> </div>
-				</div>
-				<!-- Show mis productos -->
 				
-	
-					<!-- Show the "ultimos" products -->
-					
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/producto/<%=product[i].id %> ">
-								<figure class="product-box_image">
-									<img class= "img-producto" src="/images/products/<%=product[i].url_image %> " alt="<%=product[i].name_ %>">
-								</figure>
-								<article class="product-box_data">
-									<h2><%= product[i].name_ %></h2>
-									<p><%= product[i].user_id.text_ %></p>
-									
-									
-								</article>
-							</a>
-						</section>
-					</div>
 					
 				   <%  } %> 
 		</div>
-		</div>
+	</div>
 	<!-- /Mis productos -->
 
 

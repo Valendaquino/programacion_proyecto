@@ -160,7 +160,7 @@ let controller = {
       
         let user_id = req.params.id
            product.findAll({
-            where:[{user_id: {[op.like]:`${user_id}`}}]
+            where:[{user_id: {[op.like]:`${user_id}$`}}]
             })
         .then((producto)=> 
         
@@ -182,10 +182,8 @@ let controller = {
            
           
         ]})
-        .then(product=>
-           res.render('other-profiles', { product })
-           //res.send(product)
-           )
+        
+        .then(product=>res.render('other-profiles', { product }))
         .catch(err => console.log(err))
     },
    edit: function(req,res){
