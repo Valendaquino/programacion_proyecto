@@ -7,8 +7,11 @@
 			<h2 class="products-title">Registrate</h2> 
 			</div>
 			<% if(locals.errors){ %>
-				<p class="alert" > <%= errors.register %><p>
-			<% } %>
+				
+				<div class="alert alert-danger" role="alert">
+					<%= errors.register %>
+				  </div>
+		<% } %>
 			
 			
 		<div class="contenedor">
