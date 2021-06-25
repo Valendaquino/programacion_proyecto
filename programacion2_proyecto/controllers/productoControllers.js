@@ -66,18 +66,17 @@ let controller = {
           
                 comment.findAll({
                    where: {
-                        product_id: primaryKey
-                    }
-                //    include:[{association:'user'},
-                //    {association:'product'},
-                // ],
-                //     order:[['updated_at','DESC']] ,
+                        product_id: producto.id
+                    },
+                    include:[{association:'user'},
+                     ],
+                    order:[['updated_at','DESC']] ,
                  })
                 
                 .then ((comments)=>{
                    
-                res.send(producto, comments)
-                    //return res.render('product', {producto, comments})
+                //res.send({producto, comments})
+                 return res.render('product', {producto, comments})
                }
                 
                ) 
@@ -131,7 +130,7 @@ let controller = {
                 id: primaryKey
             }
         })
-        .then(()=> res.redirect('/'))
+        .then(() => res.redirect('/'))
         .catch(err=> console.log(err))
     },
     edit:  function(req,res){
@@ -146,16 +145,28 @@ let controller = {
    }, 
    update: (req, res)=>{   
     let primaryKey = req.params.id;
-    let productoActualizar = req.body
-    product.update(
-        productoActualizar, 
-        {
-            where: {
-                id: primaryKey
-            }
-        }
-    )
-        .then(()=> res.redirect('/'))
+     product.findByPk(primaryKey)
+     .then((producto)=>{
+         if(req.session.user == undefined){
+             res.redirect("/")
+         }else{
+            let productoActualizar = { name_: req.body.nombre ,
+                description: req.body.description,
+                url_image:  req.file.filename
+              }
+                console.log(productoActualizar);
+                product.update(
+                productoActualizar, 
+                {
+                    where: {
+                        id: primaryKey
+                    }
+                }
+                )
+                .then(()=> res.redirect('/'))
+                        }
+                    })
+    
         .catch(err => console.log(err))
 },
 

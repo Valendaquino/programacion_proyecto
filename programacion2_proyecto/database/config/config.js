@@ -6,7 +6,10 @@ module.exports=
     "database": "beauty_world2",
     "host": "127.0.0.1",
     "port": "3306",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define":{
+      "onDelete":"cascade"
+    }
   },
   "test": {
     "username": "root",
