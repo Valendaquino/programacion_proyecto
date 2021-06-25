@@ -16,12 +16,12 @@ var upload = multer({ storage: storage });
 /* GET users listing. */
 router.get('/', controller.index);
 router.get('/creaTuCuenta', controller.register);
-router.post('/creaTuCuenta', upload.single('img'), controller.store);
+router.post('/creaTuCuenta',  controller.store);
 router.get('/ingresa', controller.login);
 router.post('/ingresa', controller.processLogin);
 router.get('/miPerfil/:id', controller.perfil);
 router.get('/editarPerfil/:id', controller.edit);
-router.post('/editarPerfil/:id', controller.update);
+router.post('/editarPerfil/:id',upload.single('profile_photo'), controller.update);
 router.post('/logout',controller.logout);
 router.get('/perfilUsuarios/:id', controller.otherProfile )
 module.exports = router;

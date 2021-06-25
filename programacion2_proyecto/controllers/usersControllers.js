@@ -159,6 +159,7 @@ let controller = {
    perfil: function(req,res){
       
         let user_id = req.params.id
+        // ver si hacemos la validacion 
            product.findAll({
             where:[{user_id: {[op.like]:`${user_id}$`}}]
             })
@@ -173,6 +174,7 @@ let controller = {
         
     },
     otherProfile: function(req,res){
+        // hacer un if req.session.user != undefined, que me mande a profile 
         let user_id = req.params.id
         product.findAll({
             include: [ {association:'user'}, {association:'genre'}, ],
@@ -196,17 +198,32 @@ let controller = {
         .catch(err => console.log(err))
    },
    update:function(req,res){
-        let primaryKey=req.params.id
-        let userUpdate=req.body
-        console.log(userUpdate);
-                users.update(
-                    userUpdate,
-                    {where:{
-                        id: primaryKey
-                    } } )
-                    //no cambia la img
-                .then(()=> res.redirect('/'))
-                .catch(err => console.log(err))
+    let primaryKey = req.params.id;
+    db.User.findByPk(primaryKey)
+    .then((users)=>{
+        if(req.session.user == undefined){
+            res.redirect("/")
+        }else{
+           let usuarioActualizar = { name_users: req.body.name_users,
+                                        surname: req.body.surname,
+                                        username: req.body.username,
+                                        profile_photo:  req.file.filename,
+                                        email: req.body.email,
+                                        }
+               console.log(usuarioActualizar);
+               db.User.update(
+               usuarioActualizar, 
+               {
+                   where: {
+                       id: primaryKey
+                   }
+               }
+               )
+               .then(()=> res.redirect('/'))
+                       }
+                   })
+   
+       .catch(err => console.log(err))
     },
     logout:(req,res)=>{
         req.session.destroy()
