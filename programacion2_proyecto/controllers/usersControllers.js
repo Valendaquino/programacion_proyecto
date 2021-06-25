@@ -163,12 +163,15 @@ let controller = {
         }else{
             db.User.findByPk(primaryKey)
             .then((user)=>{
-                // 
-            })
+                db.Product.findAll({
+                    where: { user_id: user.id}
+                })
+           
                 .then((producto)=> 
             
                     res.render(`profile`,{user, producto})
                     )
+                })
                     .catch((err)=>{
                         res.send(err)
                         console.log(err);
