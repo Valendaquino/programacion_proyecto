@@ -11,10 +11,7 @@ let controller = {
       
 
        },
-    
-    // agregarproducto: function(req,res){
-    //     res.render('product-add')
-    // },
+
     add:function(req,res){
         genre.findAll()
         .then (function(genres){
@@ -24,9 +21,9 @@ let controller = {
         
     },
     almacenar: function(req,res){
-       
-        let errors = {};
         console.log(req);
+        let errors = {};
+       
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
             errors.register = "El nombre no puede estar vacio"
