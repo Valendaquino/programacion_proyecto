@@ -21,17 +21,17 @@ let controller = {
         
     },
     almacenar: function(req,res){
-        console.log(req);
+        console.log(req.body);
         let errors = {};
        
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
-            errors.register = "El nombre no puede estar vacio"
+            errors.addproduct = "El nombre no puede estar vacio"
             res.locals.errors = errors
             return res.render('product-add')
 
         }else if (req.body.description== ""){
-            errors.register = "Debes escribir una descripción"
+            errors.addproduct = "Debes escribir una descripción"
             res.locals.errors = errors
             return res.render('product-add')
              } else {
