@@ -164,14 +164,14 @@ let controller = {
             db.User.findByPk(primaryKey)
             .then((user)=>{
                 db.Product.findAll({
-                    where: { user_id: user.id}
+                    where: [{ user_id: user.id}]
                 })
            
                 .then((producto)=> {
                     comment.findAll({
-                        where: {
+                        where: [{
                              user_id: user.id
-                         },
+                         }],
                          include:[{association:'user'},
                           ],
                          order:[['updated_at','DESC']] ,
@@ -209,9 +209,9 @@ let controller = {
             .then((user)=> 
           
                 product.findAll({
-                   where: {
+                   where: [{
                         user_id: user.id
-                    },
+                    }],
                     include:[{association:'user'},
                      ],
                     order:[['updated_at','DESC']] ,
@@ -219,9 +219,9 @@ let controller = {
                 
                 .then ((product)=>{
                     comment.findAll({
-                        where: {
+                        where: [{
                              user_id: user.id
-                         },
+                         }],
                          include:[{association:'user'},
                           ],
                          order:[['updated_at','DESC']] ,
@@ -252,9 +252,9 @@ let controller = {
             .then((user)=> 
           
                 product.findAll({
-                   where: {
+                   where: [{
                         user_id: user.id
-                    },
+                    }],
                     include:[{association:'user'},
                      ],
                     order:[['updated_at','DESC']] ,
@@ -262,9 +262,9 @@ let controller = {
                 
                 .then ((product)=>{
                     comment.findAll({
-                        where: {
+                        where: [{
                              user_id: user.id
-                         },
+                         }],
                          include:[{association:'user'},
                           ],
                          order:[['updated_at','DESC']] ,
@@ -284,21 +284,6 @@ let controller = {
                })
         }},
     
-    //function(req,res){
-        // hacer un if req.session.user != undefined, que me mande a profile 
-        //let user_id = req.params.id
-        //product.findAll({
-        //    include: [ {association:'user'}, {association:'genre'}, ],
-           // where:[ 
-           //{user_id: {[op.like]:`%${user_id}%`} }
-
-           
-          
-        //]})
-        
-        //.then(product=>res.render('other-profiles', { product }))
-        //.catch(err => console.log(err))
-   // },
    edit: function(req,res){
        if(req.session.user ==undefined){
            res.redirect('/')
