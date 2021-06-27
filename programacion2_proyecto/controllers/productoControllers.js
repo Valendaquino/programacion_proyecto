@@ -44,7 +44,7 @@ let controller = {
                     user_id: req.session.user.id
                    
                 } 
-                db.Product.create(product)
+                Product.create(product)
         
                 .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
