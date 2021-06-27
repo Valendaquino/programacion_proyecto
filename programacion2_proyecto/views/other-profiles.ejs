@@ -9,8 +9,8 @@
 				<img src="/images/users/<%= user.profile_photo%>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
-				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= user.name_users %> 
+				<div class="info" class="d-flex align-items-center ">
+					<h1 class="main-title"><%= user.username%> 
 						
 		
 					</h1>
@@ -18,7 +18,7 @@
 				
 				</div>
 				<hr class="separador">
-				<div class="d-flex align-items-center">
+				<div class="caja" class="d-flex align-items-center">
 					<div class="cajita">
 						<h2 class="infop"><%=  comments.length %></h2>
 						<h3 class="">Comentarios relizados </h3>
@@ -27,7 +27,7 @@
 					</div>
 						
 					<div class="cajita">
-							<h2> <%= product.length %> </h2>
+							<h2 class="infop"> <%= product.length %> </h2>
 							<h3 class="">Publicaciones</h3>
 					</div>
 						
@@ -41,7 +41,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 					<div class="col-12">
-						<div class="separadores"><h2>Mis productos</h2> </div>
+						<div class="separadores"><h2>Productos publicados</h2> </div>
 					</div>
 			<!-- Show mis productos -->
 			

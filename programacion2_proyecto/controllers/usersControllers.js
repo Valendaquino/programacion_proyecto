@@ -150,7 +150,7 @@ let controller = {
                 res.cookie ('userID', user.id, {maxAge: 1000 * 60 * 10});
             }
         }
-        return res.redirect('/');
+        return res.redirect(`/miPerfil/${user.id}`);
         }) 
         .catch(err=> console.log(err))
             },
@@ -167,10 +167,19 @@ let controller = {
                     where: { user_id: user.id}
                 })
            
-                .then((producto)=> 
-            
-                    res.render(`profile`,{user, producto})
-                    )
+                .then((producto)=> {
+                    comment.findAll({
+                        where: {
+                             user_id: user.id
+                         },
+                         include:[{association:'user'},
+                          ],
+                         order:[['updated_at','DESC']] ,
+                      })
+                    .then((comments)=>{
+                        return res.render('profile', {producto, user,comments})
+                    })
+                })
                 })
                     .catch((err)=>{
                         res.send(err)
@@ -190,7 +199,7 @@ let controller = {
 
         
         if(req.session.user.id == primaryKey){
-            res.redirect( `/miPerfil/${req.session.user_id}`)
+            res.redirect( `/miPerfil/${req.session.user.id}`)
             
         }
         else{
@@ -291,13 +300,17 @@ let controller = {
         //.catch(err => console.log(err))
    // },
    edit: function(req,res){
-        let primaryKey=req.params.id
-        users.findByPk(primaryKey)
-        .then(resultados =>
+       if(req.session.user ==undefined){
+           res.redirect('/')
+       }else{
+            let primaryKey=req.params.id
+            users.findByPk(primaryKey)
+            .then(resultados =>
 
-            res.render('profile-edit', { resultados })
-             )
-        .catch(err => console.log(err))
+                res.render('profile-edit', { resultados })
+                )
+            .catch(err => console.log(err))
+    }
    },
    update:function(req,res){
     let primaryKey = req.params.id;
@@ -306,25 +319,45 @@ let controller = {
         if(req.session.user == undefined){
             res.redirect("/")
         }else{
-           let usuarioActualizar = { name_users: req.body.name_users,
-                                        surname: req.body.surname,
-                                        username: req.body.username,
-                                        profile_photo:  req.file.filename,
-                                        email: req.body.email,
-                                        }
-               console.log(usuarioActualizar);
-               db.User.update(
-               usuarioActualizar, 
-               {
-                   where: {
-                       id: primaryKey
-                   }
-               }
-               )
-               .then(()=> res.redirect('/'))
-                       }
-                   })
-   
+            if(req.file == undefined){
+                let usuarioActualizar = { name_users: req.body.name_users,
+                    surname: req.body.surname,
+                    username: req.body.username,
+                    
+                    email: req.body.email
+                    }
+                        console.log(usuarioActualizar);
+                        db.User.update(
+                        usuarioActualizar, 
+                        {
+                        where: {
+                        id: primaryKey
+                        }
+                        }
+                        )
+                        .then(()=> res.redirect(`/miPerfil/${users.id}`))
+                     
+            }else{
+                    let usuarioActualizar = { name_users: req.body.name_users,
+                                                    surname: req.body.surname,
+                                                    username: req.body.username,
+                                                    profile_photo:  req.file.filename,
+                                                    email: req.body.email,
+                                                    }
+                        console.log(usuarioActualizar);
+                        db.User.update(
+                        usuarioActualizar, 
+                        {
+                            where: {
+                                id: primaryKey
+                            }
+                        }
+                        )
+                        .then(()=> res.redirect(`/miPerfil/${users.id}`))
+                                }
+                            }
+                    })
+                
        .catch(err => console.log(err))
     },
     logout:(req,res)=>{

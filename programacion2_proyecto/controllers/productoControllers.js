@@ -59,7 +59,7 @@ let controller = {
         let primaryKey= req.params.id
         
             product.findByPk(primaryKey, {
-                include: [ {association:'user'},
+                include: [ {association:'user'},{association:'genre'},
             ]})
            
             .then((producto)=> 
@@ -103,7 +103,7 @@ let controller = {
                 }
                 db.Comment.create(comment)
     
-                .then(() => res.redirect('/'))
+                .then(() => res.redirect(`/producto/${req.params.id}`))
                 .catch(err => console.log(err))
             }
  },
@@ -123,6 +123,7 @@ let controller = {
         .catch((err)=>`Error:${err}`)
     
     },
+    //El borrar producto lo ubicamos dentro del editar perfil ya que queda más prolijo y nos aseguramos que unicamente quien lo creó podría borrarlo.
     borrar: (req, res)=>{
         let primaryKey = req.params.id;
         product.destroy({
@@ -163,7 +164,7 @@ let controller = {
                     }
                 }
                 )
-                .then(()=> res.redirect('/'))
+                .then(()=> res.redirect(`/producto/${producto.id}`))
                         }
                     })
     

@@ -26,15 +26,6 @@
 					<input type="file" class="form-input" name="url_image"   >
 					
 					
-					
-
-					<!-- como imprimimos la fecha de creacion de la publicacion?-->
-					<label class="form-label" for=""> Día de publicación:</label>
-					<p><%=resultados.created_at%></p>
-					
-					<!-- como imprimimos la fecha de creacion de la publicacion?-->
-					<label class="form-label" for="">Día de actualización:</label>
-					<p><%=resultados.updated_at%></p>
 
 					<div class="button">
 					<button type="submit" class="boton"> Guardar cambios </button> 
@@ -43,10 +34,11 @@
 					
 				</form>
 				<!--No anda el borrar-->
-				<form style="display: inline;" action="/borrar/<%=resultados.id %>" method="POST">
-					<button class="boton" type="submit">Borrar</button>
+				<div class="borrar">
+				<form class="borrar" style="display: inline;" action="/borrar/<%=resultados.id %>" method="POST">
+					<button class="boton" type="submit">Borrar Producto</button>
 				</form>
-        
+			</div>
 			</div>
 			</div>
 		</div>	

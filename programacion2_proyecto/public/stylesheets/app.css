@@ -81,6 +81,7 @@ hr {
 .main-header .row{
   justify-content: space-between;
   padding-top: 10px;
+  margin-bottom: 0px;
 }
 
 
@@ -173,10 +174,22 @@ color:white;
 }
 
 .left-navbar a,
-.right-navbar a {
+.right-navbar a ,
+.right-navbar button{
   display: block;
   padding: 5px 0;
   border-bottom: solid 1px var(--gray);
+}
+.right-navbar button{
+  background: black;
+  border: none;
+  color: white;
+  text-shadow: #fff 0 0 10px;
+ 
+  
+}
+.right-navbar button a{
+  font-family:  var(--base-font-family);
 }
 
 
@@ -221,7 +234,7 @@ color:white;
   color: white;
   font-family: Copperplate;
   justify-content: center;
-  font-size: 20px;
+  font-size: 28px;
   background-color: black;
   
 }
@@ -373,6 +386,16 @@ color:white;
   border-radius: 8px;
   overflow: hidden;
 }
+.borrar{
+  display: flex;
+  justify-content: center;
+
+}
+.borrar .boton{
+  width: fit-content;
+  height: fit-content;
+  margin-top: 10px;
+}
 
 .product-detail-img {
   width: 70%;
@@ -463,7 +486,14 @@ color:white;
   padding: 15px 30px;
   margin-top: 15px;
 }
-
+.search{
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  color: aliceblue;
+  text-shadow:  #FFE4E1 0 0 10px;
+  margin-top: 20px;
+}
 .action-button.edit {
   background-color: chocolate;
 }
@@ -502,7 +532,18 @@ color:white;
   display: inline-block;
   font-size: 1.8em;
   margin: 10px 0;
-  font-family: 'ginebra', Times, serif;
+  color: aliceblue;
+  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.alert{
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.alert h3{
+  text-align: center;
+  margin-left:8px;
 }
 
 .form-input {
@@ -553,6 +594,9 @@ color:white;
     background-color:black;
   
 }
+.separadores h2{
+  font-size: 26px;
+}
 .separador{
   display:flex;
   background-color:black;
@@ -580,8 +624,14 @@ textarea.form-input {
 
 .foto-perfil{
   border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
-
+.caja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
@@ -596,6 +646,15 @@ textarea.form-input {
 .btn:hover{
   background-color: #DB7093 ; 
   color: black;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+}
+.imp-inf{
+  margin-right: 30px;
 }
 
 .carousel{
@@ -622,7 +681,9 @@ textarea.form-input {
 .infop{
   text-align-last: center;
 }
-
+.data-container .btn {
+  margin-left: 20px;
+}
 
 
 /*====== Media-Queries ======*/
@@ -630,9 +691,13 @@ textarea.form-input {
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
+  
   }
   .main-header .row img{
     width: 120%;
+  }
+  .main-header .row{
+    margin-bottom: 10px;
   }
   .banner {
     height: 320px;
@@ -652,15 +717,19 @@ textarea.form-input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
   }
   
-  
+  .main-navbar{
+    margin-bottom: 10px;
+  }
 
 
   .left-navbar a,
   .right-navbar a,
   .right-navbar button{
     border-bottom: none;
+    font-size: 18px;
   }
 
   
