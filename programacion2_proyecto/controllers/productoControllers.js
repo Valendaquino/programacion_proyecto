@@ -11,10 +11,7 @@ let controller = {
       
 
        },
-    
-    // agregarproducto: function(req,res){
-    //     res.render('product-add')
-    // },
+
     add:function(req,res){
         genre.findAll()
         .then (function(genres){
@@ -24,20 +21,42 @@ let controller = {
         
     },
     almacenar: function(req,res){
-       
+        console.log(req.body);
         let errors = {};
-        console.log(req);
+       
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
-            errors.register = "El nombre no puede estar vacio"
+            errors.add = "El nombre no puede estar vacio"
             res.locals.errors = errors
-            return res.render('product-add')
+        
+                genre.findAll()
+                .then (function(genres){
+                    return res.render('product-add', {genres})
+                })
+               
+           
+            .catch(err => console.log(err))
 
         }else if (req.body.description== ""){
-            errors.register = "Debes escribir una descripción"
+            errors.add = "Debes escribir una descripción"
             res.locals.errors = errors
-            return res.render('product-add')
-             } else {
+            genre.findAll()
+            .then (function(genres){
+                return res.render('product-add', {genres})
+            })
+           
+            
+             } else if (req.file== undefined){
+                errors.add = "Debes agregar una imagen"
+                res.locals.errors = errors
+                genre.findAll()
+                .then (function(genres){
+                    return res.render('product-add', {genres})
+                })
+               
+                
+                 } 
+             else {
                 console.log(req.file.filename);
                 let product = {
                     name_: req.body.name,
@@ -47,7 +66,7 @@ let controller = {
                     user_id: req.session.user.id
                    
                 } 
-                db.Product.create(product)
+                Product.create(product)
         
                 .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
@@ -150,10 +169,11 @@ let controller = {
      .then((producto)=>{
          if(req.session.user == undefined){
              res.redirect("/")
-         }else{
-            let productoActualizar = { name_: req.body.nombre ,
-                description: req.body.description,
-                url_image:  req.file.filename
+         }else {
+             if(req.file == undefined){
+            let productoActualizar = { name_: req.body.name_ ,
+                description: req.body.description
+                
               }
                 console.log(productoActualizar);
                 product.update(
@@ -165,10 +185,27 @@ let controller = {
                 }
                 )
                 .then(()=> res.redirect(`/producto/${producto.id}`))
-                        }
+                .catch(err => console.log(err))
+                        }else{
+                            let productoActualizar = { name_: req.body.name_ ,
+                                description: req.body.description,
+                                url_image: req.file.filename
+                              }
+                                console.log(productoActualizar);
+                                product.update(
+                                productoActualizar, 
+                                {
+                                    where: {
+                                        id: primaryKey
+                                    }
+                                }
+                                )
+                                .then(()=> res.redirect(`/producto/${producto.id}`))
+                                .catch(err => console.log(err))
+                        }}
                     })
     
-        .catch(err => console.log(err))
+     
 },
 
   

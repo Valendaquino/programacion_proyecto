@@ -7,7 +7,7 @@
 			<% if(locals.id == producto.user_id)  { %> 
 				
 			<p class="product-detail-description">
-				<a href="/editProduct/<%=producto.id %>">Editar</a>
+				<a class="edit" href="/editProduct/<%=producto.id %>">Editar</a>
 			</p>
 			<%  } %> 
 		</div>
@@ -16,9 +16,10 @@
 			
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src=" /images/products/<%= producto.url_image %> " alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= producto.description %> </p>
 					<h3 class="product-detail-description"> Publicacion de <a href="/perfilUsuarios/<%= producto.user_id %> "> <%= producto.user.username%> </a></h3>
 					<h3 class="product-detail-description"> Tipo de producto: <%= producto.genre.name%></h3>
-					<p class="product-detail-description"><%= producto.description %> </p>
+					
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
