@@ -13,7 +13,7 @@ let controller = {
        }, 
     register: function(req,res){
         if(req.session.user != undefined){
-            return res.redirect('/creatuCuenta')
+            return res.redirect('/')
         } else {
             return res.render('register')
         }
