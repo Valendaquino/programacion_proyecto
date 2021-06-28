@@ -321,7 +321,7 @@ let controller = {
                         }
                         )
                         .then(()=> res.redirect(`/miPerfil/${users.id}`))
-                     
+                        .catch(err => console.log(err))
             }else{
                     let usuarioActualizar = { name_users: req.body.name_users,
                                                     surname: req.body.surname,
@@ -339,11 +339,11 @@ let controller = {
                         }
                         )
                         .then(()=> res.redirect(`/miPerfil/${users.id}`))
+                        .catch(err => console.log(err))
                                 }
                             }
                     })
                 
-       .catch(err => console.log(err))
     },
     logout:(req,res)=>{
         req.session.destroy()
