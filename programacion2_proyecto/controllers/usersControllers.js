@@ -50,8 +50,6 @@ let controller = {
             return res.render('register')
 
         }
-        
-       
         else if (req.body.password == ""){ 
             errors.register = "Password no puede estar vacia"
             res.locals.errors = errors
@@ -80,13 +78,6 @@ let controller = {
 
                  return res.render('register')
              } 
-            //  else if(req.body.usuario == user.username){ 
-            //     console.log('username existe');
-            //     errors.register = "Ya existe ese nombre de usuario"
-            //     res.locals.errors = errors
-
-            //     return res.render('register')
-            // }
             else if(req.body.password != req.body.repassword ){
                  console.log('contraseña existe');
                  errors.register = "Los password no coinciden"
@@ -117,7 +108,7 @@ let controller = {
              console.log(err);
              res.send(err)
             })
-    }
+        }
 
     },
     login: function(req,res){
@@ -185,104 +176,87 @@ let controller = {
                         res.send(err)
                         console.log(err);
             })
-        }
-      
-       
-      
-        
+        } 
         
     },
     otherProfile:
-    function(req,res){
-        let primaryKey= req.params.id
-        if (req.session.user!= undefined){
+        function(req,res){
+            let primaryKey= req.params.id
+            if (req.session.user != undefined){
+                if(req.session.user.id == primaryKey){
+                    res.redirect( `/miPerfil/${req.session.user.id}`)
+                    
+                } else{
+                    db.User.findByPk(primaryKey)
+                    .then((user)=>{
+                
+                        product.findAll({
+                            where: [{
+                                user_id: user.id
+                            }],
+                            include:[{association:'user'},
+                            ],
+                            order:[['updated_at','DESC']] ,
+                        })
+                        
+                        .then ((product)=>{
+                            comment.findAll({
+                                where: [{
+                                    user_id: user.id
+                                }],
+                                include:[{association:'user'},
+                                ],
+                                order:[['updated_at','DESC']] ,
+                            })
+                            .then((comments)=>{
+                                return res.render('other-profiles', {product, user,comments})
+                            })  
+                    })      
+                    })
+                    .catch((err)=>{
+                        res.send(err)
+                        console.log(err);
+                    })
 
-        
-        if(req.session.user.id == primaryKey){
-            res.redirect( `/miPerfil/${req.session.user.id}`)
+                }
+            } else {
+                db.User.findByPk(primaryKey)
             
-        }
-        else{
-
-            db.User.findByPk(primaryKey)
-           
-            .then((user)=> 
-          
-                product.findAll({
-                   where: [{
-                        user_id: user.id
-                    }],
-                    include:[{association:'user'},
-                     ],
-                    order:[['updated_at','DESC']] ,
-                 })
-                
-                .then ((product)=>{
-                    comment.findAll({
-                        where: [{
-                             user_id: user.id
-                         }],
-                         include:[{association:'user'},
-                          ],
-                         order:[['updated_at','DESC']] ,
-                      })
-                    .then((comments)=>{
-                        return res.render('other-profiles', {product, user,comments})
+                .then((user)=> 
+            
+                    product.findAll({
+                    where: [{
+                            user_id: user.id
+                        }],
+                        include:[{association:'user'},
+                        ],
+                        order:[['updated_at','DESC']] ,
                     })
-                 
-               }
-                
-               ) 
-                
-            )
-            .catch((err)=>{
-                res.send(err)
-                console.log(err);
-               })
-
-        }
-    }
-    
-        else {
-
-        
-
-            db.User.findByPk(primaryKey)
-           
-            .then((user)=> 
-          
-                product.findAll({
-                   where: [{
-                        user_id: user.id
-                    }],
-                    include:[{association:'user'},
-                     ],
-                    order:[['updated_at','DESC']] ,
-                 })
-                
-                .then ((product)=>{
-                    comment.findAll({
-                        where: [{
-                             user_id: user.id
-                         }],
-                         include:[{association:'user'},
-                          ],
-                         order:[['updated_at','DESC']] ,
-                      })
-                    .then((comments)=>{
-                        return res.render('other-profiles', {product, user,comments})
-                    })
-                 
-               }
-                
-               ) 
-                
-            )
-            .catch((err)=>{
-                res.send(err)
-                console.log(err);
-               })
-        }},
+                    
+                    .then ((product)=>{
+                        comment.findAll({
+                            where: [{
+                                user_id: user.id
+                            }],
+                            include:[{association:'user'},
+                            ],
+                            order:[['updated_at','DESC']] ,
+                        })
+                        .then((comments)=>{
+                            return res.render('other-profiles', {product, user,comments})
+                        })
+                    
+                }
+                    
+                ) 
+                    
+                )
+                .catch((err)=>{
+                    res.send(err)
+                    console.log(err);
+                })
+            }
+    },
     
    edit: function(req,res){
        if(req.session.user ==undefined){
@@ -295,7 +269,7 @@ let controller = {
                 res.render('profile-edit', { resultados })
                 )
             .catch(err => console.log(err))
-    }
+        }
    },
    update:function(req,res){
     let primaryKey = req.params.id;
@@ -308,16 +282,14 @@ let controller = {
                 let usuarioActualizar = { name_users: req.body.name_users,
                     surname: req.body.surname,
                     username: req.body.username,
-                    
                     email: req.body.email
                     }
-                        console.log(usuarioActualizar);
                         db.User.update(
                         usuarioActualizar, 
                         {
-                        where: {
-                        id: primaryKey
-                        }
+                            where: {
+                            id: primaryKey
+                            }
                         }
                         )
                         .then(()=> res.redirect(`/miPerfil/${users.id}`))
@@ -329,7 +301,7 @@ let controller = {
                                                     profile_photo:  req.file.filename,
                                                     email: req.body.email,
                                                     }
-                        console.log(usuarioActualizar);
+                       
                         db.User.update(
                         usuarioActualizar, 
                         {

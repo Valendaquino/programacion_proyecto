@@ -23,7 +23,10 @@ let controller = {
     almacenar: function(req,res){
         console.log(req.body);
         let errors = {};
-       
+     if(req.session.user == undefined){
+         res.redirect('/')
+     }else{
+
         //chequear los campos obligatorios
        if(req.body.name== ""){ 
             errors.add = "El nombre no puede estar vacio"
@@ -57,7 +60,7 @@ let controller = {
                 
                  } 
              else {
-                console.log(req.file.filename);
+           
                 let product = {
                     name_: req.body.name,
                     description: req.body.description,
@@ -66,11 +69,12 @@ let controller = {
                     user_id: req.session.user.id
                    
                 } 
-                Product.create(product)
+                db.Product.create(product)
         
                 .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
                 }
+            }
        
     },
 
